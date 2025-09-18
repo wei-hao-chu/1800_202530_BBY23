@@ -62,7 +62,7 @@ elmo-hikes/
 - **Hazen1Yang** - (Hazen) BCIT CST Student 
 - **Gamecoder3D** - (Matthew V.) BCIT CST Student who loves videogames.
 - **Vincent** - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
-
+- **Melina Bazrafkan** - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
 ---
 
 
