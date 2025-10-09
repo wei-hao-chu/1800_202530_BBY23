@@ -1,1 +1,22 @@
+#logo{
+    width: 60px;
+    height: 60px;
+}
 
+
+nav {
+  background-color: #f0f4ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
