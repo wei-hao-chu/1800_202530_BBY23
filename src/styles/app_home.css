@@ -89,11 +89,11 @@ body {
   font-family: "Pacifico", cursive;
   font-size: 36px;
   text-align: center;
-  margin: 18px 0 0;
+  margin: 18px 45% 0;
   font-weight: 400;
   transform: translateY(-40px);
   /* place the brand in front of the topbar while keeping it visually in the same place */
-  position: relative;
+  position: fixed;
   z-index: 25;
   pointer-events: none;
   color: var(--accent);
