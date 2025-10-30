@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PathFinder</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles/app_home.css" />
+        <!-- Web Components for shared navbar and footer layout -->
+    <script type="module" src="/src/components/app_site-navbar.js"></script>
+    <script type="module" src="/src/components/app_site-footer.js"></script>
+  </head>
+  <body>
+
+        <!-- our own navbar goes here -->
+    <site-navbar></site-navbar>
+
+<!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
+
+    <!-- Main content goes here -->
+    <!-- This is the welcome on the landing page, with a login/signup button -->
+    <div class="container">
+      <div class="px-4 py-5 my-5 text-center">
+        <img
+          class="d-block mx-auto mb-4"
+          src="https://www.svgrepo.com/show/530614/map.svg"
+          alt="map"
+          width="200"
+        />
+        <h1 class="display-5 fw-bold">
+          Welcome to PathFinder, <span id="name-goes-here">my friend!</span>
+        </h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">
+            Join other students like yourself.
+            <br />
+            <br />
+            <br />
+            <br />
+            test
+          </p>
+          <h2>Stay safe.</h2>
+          <div class="d-grid justify-content-sm-center">
+            <!-- Make this button clickable, using onclick event listener -->
+            <button
+              onclick="window.location.href='login.html'"
+              type="button"
+              class="btn btn-info btn-lg"
+            >
+              Login/Signup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript scripts go here      -->
+    <!---------------------------------------------->
+    <script type="module" src="/src/app.js"></script>
+
+        <!-- our own footer goes here -->
+    <site-footer></site-footer>
+
+  </body>
+</html>
