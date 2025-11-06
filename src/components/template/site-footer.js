@@ -23,7 +23,7 @@ class SiteFooter extends HTMLElement {
     this.innerHTML = `
       <footer class="py-3 my-4 border-top text-center bg-light">
         <p class="mb-0 text-muted">
-          &copy; ${new Date().getFullYear()} Pathfinder BBY23 <br>(Matthew, Melina, Hazen, Vincent)
+          &copy; ${new Date().getFullYear()} Pathfinder BBY-23 <br>(Matthew, Melina, Hazen, Vincent)
         </p>
       </footer>
     `;

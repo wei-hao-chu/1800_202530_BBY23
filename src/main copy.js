@@ -14,8 +14,8 @@ function showDashboard() {
 
   onAuthReady(async (user) => {
     if (!user) {
-      // If no user is signed in → redirect back to login page.
-      location.href = "index.html";
+  // If no user is signed in → redirect back to login page.
+  location.href = "about.html";
       return;
     }
 

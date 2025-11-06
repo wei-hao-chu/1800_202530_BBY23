@@ -47,7 +47,7 @@ elmo-hikes/
 │   └── style.css
 ├── public/
 ├── images/
-├── index.html
+├── about.html
 ├── package.json
 ├── README.md
 ```
