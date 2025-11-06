@@ -40,6 +40,7 @@ Example:
 ## Project Structure
 
 ```
+NEEDS TO BE UPDATED
 elmo-hikes/
 ├── src/
 │   ├── main.js
@@ -47,7 +48,7 @@ elmo-hikes/
 │   └── style.css
 ├── public/
 ├── images/
-├── about.html
+├── index.html
 ├── package.json
 ├── README.md
 ```

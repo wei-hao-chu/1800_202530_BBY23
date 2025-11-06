@@ -8,8 +8,8 @@ class SiteFooter extends HTMLElement {
         alt="news"
       />
 
-      <div class="home-pill">
-        <a href="about.html">
+        <div class="home-pill">
+        <a href="index.html">
           <img
             class="home-button"
             src="https://www.svgrepo.com/show/521703/home.svg"

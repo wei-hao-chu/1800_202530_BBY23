@@ -1,11 +1,12 @@
 @import url("https://is.gd/D2oZBE");
 
+/* Changes these to names and use these colors instead */
 Color Pallete Template {
-  --african-violet: #927ea9ff;
-  --melon: #ebadacff;
-  --azure: #3a84dfff;
-  --folly: #fe4858ff;
-  --sapphire: #395ab7ff;
+--yale-blue: #134074ff;
+--berkeley-blue: #13315cff;
+--oxford-blue: #0b2545ff;
+--powder-blue: #8da9c4ff;
+--mint-cream: #eef4edff;
 }
 
 #logo {
@@ -14,7 +15,7 @@ Color Pallete Template {
 }
 
 nav {
-  background-color: #f0f4ff;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,7 +98,7 @@ h2 {
 
   aside {
     display: grid;
-    grid-template-rows: 30% 25% 17% 60% 3%;
+    grid-template-rows: 30% 25% 17% 60% 4%;
     grid-template-columns: 1fr;
     min-height: 100vh;
   }
@@ -109,7 +110,7 @@ h2 {
 
   #middle {
     grid-row: 3;
-    background-color: purple;
+    background-color: #413C58;
     padding: 1em;
     text-align: center;
     column-count: 2;
@@ -131,7 +132,7 @@ h2 {
   #bottom {
     padding: 1em;
     grid-row: 4;
-    background-color: #ebadacff;
+    background-color: white;
     text-align: center;
     column-count: 2;
     column-gap: 1em;
@@ -148,7 +149,7 @@ h2 {
     padding: 1em;
   }
 
-  footer {
+  site-footer {
     grid-row: 5;
     background-color: lightblue;
     text-align: center;
@@ -218,7 +219,7 @@ h2 {
     text-align: center;
     font-size: 20px;
     grid-row: 3;
-    background-color: purple;
+    background-color: #413C58;
     padding: 1em;
   }
 
@@ -236,7 +237,7 @@ h2 {
   #bottom {
     padding: 1em;
     grid-row: 4;
-    background-color: #ebadacff;
+    background-color: white;
     text-align: center;
   }
 
@@ -329,7 +330,7 @@ h2 {
 
   #middle {
     grid-row: 3;
-    background-color: purple;
+    background-color: #413C58;
     padding: 1em;
   }
 
@@ -345,7 +346,7 @@ h2 {
   #bottom {
     padding: 1em;
     grid-row: 4;
-    background-color: #ebadacff;
+    background-color: white;
     text-align: center;
     padding-top: 5em;
   }
@@ -355,7 +356,7 @@ h2 {
   }
 
   figcaption {
-    color: #ebadacff;
+    color: white;
   }
 
   #slim {

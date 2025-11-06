@@ -36,7 +36,7 @@ export async function signupUser(name, email, password) {
 
 export async function logoutUser() {
   await signOut(auth);
-  window.location.href = "about.html";
+  window.location.href = "index.html";
 }
 
 export function checkAuthState() {
@@ -46,7 +46,7 @@ export function checkAuthState() {
         const displayName = user.displayName || user.email;
         document.getElementById("welcomeMessage")?.textContent = `Hello, ${displayName}!`;
       } else {
-        window.location.href = "about.html";
+        window.location.href = "index.html";
       }
     }
   });
