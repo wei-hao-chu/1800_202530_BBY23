@@ -35,6 +35,15 @@ nav ul {
   align-items: center;
 }
 
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
 /*Element Selectors*/
 body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -617,6 +626,11 @@ h4 {
 
 * {
   margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /*Combinatory*/
