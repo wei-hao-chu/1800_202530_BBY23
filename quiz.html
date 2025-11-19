@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Career Quiz - PathFinder</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles/app_home.css" />
+    <link rel="stylesheet" href="src/styles/quiz.css" />
+    <!-- Web Components for shared navbar and footer layout -->
+    <script type="module" src="/src/components/app_site-navbar.js"></script>
+    <script type="module" src="/src/components/app_site-footer.js"></script>
+  </head>
+  <body>
+    <!-- our own navbar goes here -->
+    <site-navbar></site-navbar>
+
+    <!-- Main Quiz Content -->
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <h1>Identify careers that are tailored to your interests</h1>
+        <p class="quiz-description">
+          We all find some activities or topics more interesting than others. Your interests and the way you like to work are important aspects to consider when deciding on a career path. Answer these questions to find out if you prefer directive, social, methodical, objective or innovative work.
+        </p>
+        <p class="quiz-info">
+          <strong>All questions must be answered.</strong>
+        </p>
+        <div class="quiz-stats">
+          <span>⏱️ 10 minutes</span>
+          <span>📝 50 questions</span>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text" id="progressText">0%</div>
+      </div>
+
+      <!-- Quiz Questions -->
+      <div id="quizQuestions" class="quiz-questions">
+        <!-- Questions will be dynamically inserted here -->
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="quiz-navigation">
+        <button id="prevBtn" class="btn btn-secondary" style="display: none;">Previous</button>
+        <button id="nextBtn" class="btn btn-primary">Next</button>
+        <button id="submitBtn" class="btn btn-success" style="display: none;">Submit</button>
+      </div>
+
+      <!-- Page Indicator -->
+      <div class="page-indicator" id="pageIndicator">
+        Page 1 of 5
+      </div>
+
+      <!-- Delete Answers Button -->
+      <div class="delete-answers">
+        <button id="deleteBtn" class="btn btn-link">🗑️ Delete all answers</button>
+      </div>
+    </div>
+
+    <!-- our own footer goes here -->
+    <site-footer></site-footer>
+
+    <!-- Quiz JavaScript -->
+    <script type="module" src="/src/quiz.js"></script>
+  </body>
+</html>
