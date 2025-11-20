@@ -1,6 +1,6 @@
 class SiteFooter extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
     <nav class="bottombar">
       <img
         src="https://www.svgrepo.com/show/343466/news-feed.svg"
@@ -8,7 +8,7 @@ class SiteFooter extends HTMLElement {
         alt="news"
       />
 
-      <div class="home-pill">
+        <div class="home-pill">
         <a href="index.html">
           <img
             class="home-button"
@@ -25,7 +25,7 @@ class SiteFooter extends HTMLElement {
         />
     </nav>
         `;
-    }
+  }
 }
 
-customElements.define('site-footer', SiteFooter);
+customElements.define("site-footer", SiteFooter);
