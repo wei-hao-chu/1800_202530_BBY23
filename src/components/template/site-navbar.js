@@ -166,6 +166,7 @@ class SiteNavbar extends HTMLElement {
           <a href="/about">About</a>
           <a href="/help">Help</a>
           <a href="/contact">Contact</a>
+          <a href="/app_home.html">App</a>
         </div>
 
         <div class="overlay" id="overlay"></div>
@@ -184,19 +185,22 @@ class SiteNavbar extends HTMLElement {
       </nav>
     `;
 
-    const hamburger = this.querySelector('#hamburger');
-    const sideMenu = this.querySelector('#sideMenu');
-    const overlay = this.querySelector('#overlay');
+    const hamburger = this.querySelector("#hamburger");
+    const sideMenu = this.querySelector("#sideMenu");
+    const overlay = this.querySelector("#overlay");
 
-    const closeMenu = () => { sideMenu.classList.remove('open'); overlay.classList.remove('show'); };
-    hamburger.addEventListener('click', () => {
-      const open = sideMenu.classList.toggle('open');
-      overlay.classList.toggle('show', open);
+    const closeMenu = () => {
+      sideMenu.classList.remove("open");
+      overlay.classList.remove("show");
+    };
+    hamburger.addEventListener("click", () => {
+      const open = sideMenu.classList.toggle("open");
+      overlay.classList.toggle("show", open);
     });
-    overlay.addEventListener('click', closeMenu);
+    overlay.addEventListener("click", closeMenu);
   }
 
   renderAuthControls() {}
 }
 
-customElements.define('site-navbar', SiteNavbar);
+customElements.define("site-navbar", SiteNavbar);

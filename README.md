@@ -1,8 +1,8 @@
-# Elmo Hikes
+# PathFinder
 
 ## Overview
 
-Elmo Hikes is a client-side JavaScript web application that helps users discover and explore hiking trails. The app displays a curated list of hike trails, each with details such as name, location, difficulty, and an image. Users can browse the list and mark their favorite trails for easy access later.
+PathFinder is a client-side JavaScript web application that helps users discover and explore their career paths.
 
 Developed for the COMP 1800 course, this project applies User-Centred Design practices and agile project management, and demonstrates integration with Firebase backend services for storing user favorites.
 
@@ -10,9 +10,9 @@ Developed for the COMP 1800 course, this project applies User-Centred Design pra
 
 ## Features
 
-- Browse a list of curated hiking trails with images and details
-- Mark and unmark trails as favorites
-- View a personalized list of favorite hikes
+- Browse a list career paths
+- Set goals
+- Do personalised quizzes
 - Responsive design for desktop and mobile
 
 ---
@@ -31,17 +31,15 @@ Example:
 ## Usage
 
 1. Open your browser and visit `http://localhost:3000`.
-2. Browse the list of hiking trails displayed on the main page.
-3. Click the heart icon (or similar) to mark a trail as a favorite.
-4. View your favorite hikes in the favorites section.
+2. Browse our about page on the main page.
 
 ---
 
 ## Project Structure
 
 ```
-NEEDS TO BE UPDATED
-elmo-hikes/
+MAY VARY
+1800_202530_BBY23/
 ├── src/
 │   ├── main.js
 ├── styles/
@@ -66,7 +64,7 @@ elmo-hikes/
 
 ## Acknowledgments
 
-- Trail data and images are for demonstration purposes only.
+- Images are free to use.
 - Code snippets were adapted from resources such as [Stack Overflow](https://stackoverflow.com/) and [MDN Web Docs](https://developer.mozilla.org/).
 - Icons sourced from [FontAwesome](https://fontawesome.com/) and images from [Unsplash](https://unsplash.com/).
 
@@ -76,14 +74,13 @@ elmo-hikes/
 
 ### Limitations
 
-- Limited trail details (e.g., no live trail conditions).
-- Accessibility features can be further improved.
+- No getting employers requirements
 
 ### Future Work
 
-- Implement map view and trailhead directions.
-- Add filtering and sorting options (e.g., by difficulty, distance).
-- Create a dark mode for better usability in low-light conditions.
+- Complete surveys.
+- Set diferetn carrer path
+- News
 
 ---
 
