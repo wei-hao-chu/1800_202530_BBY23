@@ -13,7 +13,7 @@ class SiteNavbar extends HTMLElement {
         :host { display: block; width: 100%; }
 
         nav {
-          background-color: #413C58;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
           color: #f1faee;
           padding: clamp(0.5rem, 1.2vw, 0.9rem) clamp(0.75rem, 2vw, 1.25rem);
           position: relative;
@@ -141,11 +141,11 @@ class SiteNavbar extends HTMLElement {
 
         <div class="side-menu" id="sideMenu" aria-hidden="true">
           <div class="menu-logo">Pathfinder</div>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/help">Help</a>
-          <a href="/contact">Contact</a>
-          <a href="/app_home.html">App</a>
+            <a href="app_home.html">App</a>
+            <a href="#how">FAQ</a>
+            <a href="#info">Surveys</a>
+            <a href="#about">News</a>
+            <a href="app_goals.html">Goals</a>
         </div>
 
         <div class="overlay" id="overlay"></div>
