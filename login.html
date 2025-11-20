@@ -1,29 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Pathfinder</title>
-    <meta name="pathfinder-application" content="pathfinder">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="src/styles/style.css" />
-    <script type="module" src="/src/components/template/site-navbar.js"></script>
-    <script type="module" src="/src/components/template/site-footer.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pathfinder • Log in</title>
+    <meta name="pathfinder-application" content="pathfinder" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Font + Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+    />
+    <link rel="stylesheet" href="src/styles/auth.css" />
+    <!-- Optional global components -->
+    <script type="module" src="/src/template/site-navbar.js"></script>
+    <script type="module" src="/src/template/site-footer.js"></script>
     <script type="module" src="/src/main.js"></script>
-
-</head>
-
-<body>
-    <!-- Navbar -->
+  </head>
+  <body>
     <site-navbar></site-navbar>
 
-    <!-- Main content area -->
-    <main class="container my-4">
-      LOGIN
-        
-    <!-- Your layout or app content goes here -->     
+    <main class="auth-hero">
+      <section class="auth-card" aria-labelledby="loginTitle">
+        <div class="auth-brand">
+          <span class="brand-text">Pathfinder</span>
+        </div>
+
+        <h1 id="loginTitle">Log in to your account</h1>
+        <p class="helper">Welcome back! Enter your credentials to continue.</p>
+
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input
+              id="loginEmail"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+            <p class="error" id="loginEmailError" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <input
+              id="loginPassword"
+              name="password"
+              type="password"
+              placeholder="••••••••"
+              autocomplete="current-password"
+              required
+            />
+            <p class="error" id="loginPasswordError" aria-live="polite"></p>
+          </div>
+
+          <div class="meta">
+            <a href="signup.html">Create account</a>
+          </div>
+        </form>
+      </section>
     </main>
 
-    <!-- Footer -->
     <site-footer></site-footer>
-</body>
+
+    <!-- Hook up your Firebase logic to these IDs -->
+    <script type="module">
+      // Example only: add your Firebase auth handlers here.
+      // document.getElementById('loginForm').addEventListener('submit', ...)
+    </script>
+  </body>
 </html>

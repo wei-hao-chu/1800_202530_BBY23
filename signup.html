@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Pathfinder • Sign up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Font + Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+  <link rel="stylesheet" href="src/styles/auth.css" />
+  <!-- Optional global components -->
+  <script type="module" src="/src/template/site-navbar.js"></script>
+  <script type="module" src="/src/template/site-footer.js"></script>
+</head>
+<body>
+  <site-navbar></site-navbar>
+
+  <main class="auth-hero">
+    <section class="auth-card" aria-labelledby="signupTitle">
+      <div class="auth-brand">
+        <span class="brand-text">Pathfinder</span>
+      </div>
+
+      <h1 id="signupTitle">Create your account</h1>
+      <p class="helper">Start tracking goals, applications, and growth in one place.</p>
+
+      <form id="signupForm" novalidate>
+        <div class="field">
+          <label for="signupName">Full name</label>
+          <input id="signupName" name="displayName" type="text" placeholder="Enter Name" autocomplete="name" required />
+          <p class="error" id="signupNameError" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="signupEmail">Email</label>
+          <input id="signupEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+          <p class="error" id="signupEmailError" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="signupPassword">Password</label>
+          <input id="signupPassword" name="password" type="password" placeholder="Create a password" autocomplete="new-password" required />
+          <p class="error" id="signupPasswordError" aria-live="polite"></p>
+        </div>
+
+        <br />
+        <button type="submit" class="btn primary" id="signupSubmit" data-action="signup">Create account</button>
+
+
+        <div class="meta">
+          <a href="login.html">Already have an account? Log in</a>
+          <span></span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+
+  <!-- Hook up your Firebase logic to these IDs -->
+  <script type="module">
+    // Example only: add your Firebase auth handlers here.
+    // document.getElementById('signupForm').addEventListener('submit', ...)
+  </script>
+</body>
+</html>
