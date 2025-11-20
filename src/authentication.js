@@ -1,7 +1,9 @@
 // Clean copy of authentication utilities
+console.log("authentication.js loaded");
+
 import { auth } from "/src/firebaseConfig.js";
 import { db } from "/src/firebaseConfig.js";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, getDoc } from "firebase/firestore";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -16,15 +18,15 @@ export async function loginUser(email, password) {
 
 export async function signupUser(name, email, password) {
   const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-  const user = userCredential.user;
+  const user = userCredential.user; // Get the user object
   await updateProfile(user, { displayName: name });
 
   try {
     await setDoc(doc(db, "users", user.uid), {
       name: name,
       email: email,
-      country: "Canada",
-      school: "BCIT",
+      country: "Canada", // Default value
+      school: "BCIT"     // Default value
     });
     console.log("Firestore user document created successfully!");
   } catch (error) {
@@ -70,27 +72,4 @@ export function authErrorMessage(error) {
     "auth/network-request-failed": "Network error. Try again.",
   };
   return map[code] || "Something went wrong. Please try again.";
-}
-
-
-function showDashboard() {
-    const nameElement = document.getElementById("name-goes-here"); // the <h1> element to display "Hello, {name}"
-
-    onAuthReady(async (user) => {
-        if (!user) {
-            // If no user is signed in → redirect back to login page.
-            location.href = "index.html";
-            return;
-        }
-
-        const userDoc = await getDoc(doc(db, "users", user.uid));
-        const name = userDoc.exists()
-            ? userDoc.data().name
-            : user.displayName || user.email;
-
-        // Update the welcome message with their name/email.
-        if (nameElement) {
-            nameElement.textContent = `${name}!`;
-        }
-    });
 }

@@ -4,81 +4,78 @@
   <meta charset="utf-8" />
   <title>Pathfinder • Sign up</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Font + Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
   <link rel="stylesheet" href="src/styles/auth.css" />
   <link rel="stylesheet" href="src/styles/style.css" />
 </head>
+
 <body>
-  <header id="home">
-      <div class="left">
-        <div class="row">
-          <ul>
-            <img id="logo" src="images/study.png" width="10%" alt="Study" />
-            <li><a href="app_home.html">App</a></li>
-            <li><a href="#how">FAQ</a></li>
-            <li><a href="#info">Surveys</a></li>
-            <li><a href="#about">News</a></li>
-          </ul>
-        </div>
+
+<header id="home">
+  <div class="left">
+    <div class="row">
+      <ul>
+        <img id="logo" src="images/study.png" width="10%" alt="Study" />
+        <li><a href="app_home.html">App</a></li>
+        <li><a href="#how">FAQ</a></li>
+        <li><a href="#info">Surveys</a></li>
+        <li><a href="#about">News</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="right">
+    <div class="row">
+      <h4>Pathfinder</h4>
+      <img src="images/open book.jpg" width="20%" alt="book logo" />
+    </div>
+  </div>
+</header>
+
+<main class="auth-hero">
+
+  <div id="authAlert" class="d-none"></div>
+
+  <section id="signupView" class="auth-card" aria-labelledby="signupTitle">
+    <div class="auth-brand">
+      <span class="brand-text">Pathfinder</span>
+    </div>
+
+    <h1 id="signupTitle">Create your account</h1>
+    <p class="helper">Start tracking goals, applications, and growth in one place.</p>
+
+    <form id="signupForm" novalidate>
+      <div class="field">
+        <label for="signupName">Full name</label>
+        <input id="signupName" name="displayName" type="text" placeholder="Enter Name" autocomplete="name" required />
       </div>
-      <div class="right">
-        <div class="row">
-          <h4>Pathfinder</h4>
-          <img src="images/open book.jpg" width="20%" alt="book logo" />
-        </div>
-      </div>
-    </header>
 
-  <main class="auth-hero">
-    <section class="auth-card" aria-labelledby="signupTitle">
-      <div class="auth-brand">
-        <span class="brand-text">Pathfinder</span>
+      <div class="field">
+        <label for="signupEmail">Email</label>
+        <input id="signupEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
       </div>
 
-      <h1 id="signupTitle">Create your account</h1>
-      <p class="helper">Start tracking goals, applications, and growth in one place.</p>
+      <div class="field">
+        <label for="signupPassword">Password</label>
+        <input id="signupPassword" name="password" type="password" placeholder="Create a password" autocomplete="new-password" required />
+      </div>
+    </form>
 
-      <form id="signupForm" novalidate>
-        <div class="field">
-          <label for="signupName">Full name</label>
-          <input id="signupName" name="displayName" type="text" placeholder="Enter Name" autocomplete="name" required />
-          <p class="error" id="signupNameError" aria-live="polite"></p>
-        </div>
+    <div class="meta" style="margin-top: 12px; text-align:center;">
+      <span>Already have an account?</span>
+      <a id="toLogin" href="login.html">Create</a>
+    </div>
+  </section>
 
-        <div class="field">
-          <label for="signupEmail">Email</label>
-          <input id="signupEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
-          <p class="error" id="signupEmailError" aria-live="polite"></p>
-        </div>
+  <section id="loginView" class="d-none"></section>
 
-        <div class="field">
-          <label for="signupPassword">Password</label>
-          <input id="signupPassword" name="password" type="password" placeholder="Create a password" autocomplete="new-password" required />
-          <p class="error" id="signupPasswordError" aria-live="polite"></p>
-        </div>
-        <div class="meta">
-          <a href="login.html">Already have an account? Log in</a>
-          <span></span>
-        </div>
-        <div class="actions">
-        <button type="submit" class="btn submit">Create</button>
-        </div>
+</main>
 
-      </form>
-    </section>
-  </main>
+<footer>Page Created By Matthew, Vincent, Melina, and Hazen.</footer>
 
-  <footer>Page Created By Matthew, Vincent, Melina, and Hazen.</footer>
+<script type="module" src="/src/firebaseConfig.js"></script>
+<script type="module" src="/src/authentication.js"></script>
+<script type="module" src="/src/loginSignup.js"></script>
 
-  <!-- Hook up your Firebase logic to these IDs -->
-  <script type="module">
-    <script type="module" src="/src/firebaseConfig.js"></script>
-    <script type="module" src="/src/authentication.js"></script>
-    <script type="module" src="/src/loginSignup.js"></script>
-    // Example only: add your Firebase auth handlers here.
-    // document.getElementById('signupForm').addEventListener('submit', ...)
-  </script>
 </body>
 </html>
