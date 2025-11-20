@@ -140,10 +140,10 @@ class SiteNavbar extends HTMLElement {
         </div>
 
         <div class="side-menu" id="sideMenu" aria-hidden="true">
-          <div class="menu-logo">Pathfinder</div>
+          <a href="index.html"><div class="menu-logo">Pathfinder</div></a>
             <a href="app_home.html">App</a>
             <a href="#how">FAQ</a>
-            <a href="#info">Surveys</a>
+            <a href="quiz.html">Surveys</a>
             <a href="#about">News</a>
             <a href="goals.html">Goals</a>
         </div>
@@ -151,6 +151,13 @@ class SiteNavbar extends HTMLElement {
         <div class="overlay" id="overlay"></div>
 
         <div class="right-section">
+        <button
+          class="btn"
+          onclick="window.location.href='login.html'"
+          type="button"
+        >
+          Login/Signup
+        </button>
           <div class="search-container">
             <input type="search" id="navSearch" placeholder="Search" aria-label="Search">
             <button type="button" class="search-btn" aria-label="Search">
