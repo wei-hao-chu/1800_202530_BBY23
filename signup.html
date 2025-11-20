@@ -1,81 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Pathfinder • Sign up</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
-  <link rel="stylesheet" href="src/styles/auth.css" />
-  <link rel="stylesheet" href="src/styles/style.css" />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pathfinder • Sign up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+    />
+    <link rel="stylesheet" href="src/styles/auth.css" />
+    <link rel="stylesheet" href="src/styles/style.css" />
+  </head>
 
-<body>
+  <body>
+    <!-- No navbar so it looks cleaner -->
+    <main class="auth-hero">
+      <div id="authAlert" class="d-none"></div>
 
-<header id="home">
-  <div class="left">
-    <div class="row">
-      <ul>
-        <img id="logo" src="images/study.png" width="10%" alt="Study" />
-        <li><a href="app_home.html">App</a></li>
-        <li><a href="#how">FAQ</a></li>
-        <li><a href="#info">Surveys</a></li>
-        <li><a href="#about">News</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="right">
-    <div class="row">
-      <h4>Pathfinder</h4>
-      <img src="images/open book.jpg" width="20%" alt="book logo" />
-    </div>
-  </div>
-</header>
+      <section id="signupView" class="auth-card" aria-labelledby="signupTitle">
+        <div class="auth-brand">
+          <a href="index.html"><span class="brand-text">Pathfinder</span></a>
+        </div>
 
-<main class="auth-hero">
+        <h2 style="color: black">Create your account</h2>
+        <p class="helper">
+          Start tracking goals, applications, and growth in one place.
+        </p>
 
-  <div id="authAlert" class="d-none"></div>
+        <form id="signupForm" novalidate>
+          <div class="field">
+            <label for="signupName">Full name</label>
+            <input
+              id="signupName"
+              name="displayName"
+              type="text"
+              placeholder="Enter Name"
+              autocomplete="name"
+              required
+            />
+          </div>
 
-  <section id="signupView" class="auth-card" aria-labelledby="signupTitle">
-    <div class="auth-brand">
-      <span class="brand-text">Pathfinder</span>
-    </div>
+          <div class="field">
+            <label for="signupEmail">Email</label>
+            <input
+              id="signupEmail"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+          </div>
 
-    <h1 id="signupTitle">Create your account</h1>
-    <p class="helper">Start tracking goals, applications, and growth in one place.</p>
+          <div class="field">
+            <label for="signupPassword">Password</label>
+            <input
+              id="signupPassword"
+              name="password"
+              type="password"
+              placeholder="Create a password"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+        </form>
 
-    <form id="signupForm" novalidate>
-      <div class="field">
-        <label for="signupName">Full name</label>
-        <input id="signupName" name="displayName" type="text" placeholder="Enter Name" autocomplete="name" required />
-      </div>
+        <div class="meta" style="margin-top: 12px; text-align: center">
+          <a href="login.html"><span>Already have an account?</span></a>
+          <a id="toLogin" href="login.html">Create</a>
+        </div>
+      </section>
 
-      <div class="field">
-        <label for="signupEmail">Email</label>
-        <input id="signupEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
-      </div>
-
-      <div class="field">
-        <label for="signupPassword">Password</label>
-        <input id="signupPassword" name="password" type="password" placeholder="Create a password" autocomplete="new-password" required />
-      </div>
-    </form>
-
-    <div class="meta" style="margin-top: 12px; text-align:center;">
-      <span>Already have an account?</span>
-      <a id="toLogin" href="login.html">Create</a>
-    </div>
-  </section>
-
-  <section id="loginView" class="d-none"></section>
-
-</main>
-
-<footer>Page Created By Matthew, Vincent, Melina, and Hazen.</footer>
-
-<script type="module" src="/src/firebaseConfig.js"></script>
-<script type="module" src="/src/authentication.js"></script>
-<script type="module" src="/src/loginSignup.js"></script>
-
-</body>
+      <section id="loginView" class="d-none"></section>
+    </main>
+    <!-- No footer so it looks cleaner -->
+    <script type="module" src="/src/firebaseConfig.js"></script>
+    <script type="module" src="/src/authentication.js"></script>
+    <script type="module" src="/src/loginSignup.js"></script>
+  </body>
 </html>
