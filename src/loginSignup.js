@@ -5,6 +5,7 @@
 // Starter code provided for students to use and adapt.
 // Manages the login/signup form behaviour and redirects.
 // -------------------------------------------------------------
+console.log("loginSignup.js loaded");
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";

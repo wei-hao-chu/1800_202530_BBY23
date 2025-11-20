@@ -7,6 +7,11 @@
 // The configuration values are loaded securely from Vite
 // environment variables (.env file in project root).
 // ---------------------------------------------------------
+console.log("firebaseConfig.js loaded");
+console.log("API KEY:", import.meta.env.VITE_FIREBASE_API_KEY);
+console.log("AUTH DOMAIN:", import.meta.env.VITE_FIREBASE_AUTH_DOMAIN);
+console.log("PROJECT ID:", import.meta.env.VITE_FIREBASE_PROJECT_ID);
+console.log("APP ID:", import.meta.env.VITE_FIREBASE_APP_ID);
 
 // Import Firebase SDK modules (using Firebase v9 modular syntax)
 import { initializeApp } from "firebase/app";
