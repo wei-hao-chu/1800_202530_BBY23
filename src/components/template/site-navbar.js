@@ -145,7 +145,7 @@ class SiteNavbar extends HTMLElement {
             <a href="#how">FAQ</a>
             <a href="#info">Surveys</a>
             <a href="#about">News</a>
-            <a href="app_goals.html">Goals</a>
+            <a href="goals.html">Goals</a>
         </div>
 
         <div class="overlay" id="overlay"></div>
@@ -159,7 +159,9 @@ class SiteNavbar extends HTMLElement {
               </svg>
             </button>
           </div>
+          <a href="index.html">
           <span class="site-brand">Pathfinder</span>
+          </a>
         </div>
       </nav>
     `;
