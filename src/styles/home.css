@@ -1,6 +1,4 @@
-/* ===========================
-   Pathfinder Main Page Styles
-   =========================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 :root {
@@ -24,9 +22,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ======================================
-   HERO SECTION
-   ====================================== */
 .hero {
   background: radial-gradient(1px 1px at 10px 10px, rgba(0, 0, 0, 0.05) 1px, transparent 0)
               0 0 / 16px 16px;
@@ -34,15 +29,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: calc(var(--nav-h) + 20px); /* adds safe space under navbar */
+  padding-top: calc(var(--nav-h) + 20px);
   padding-bottom: 60px;
   position: relative;
   z-index: 1;
 }
 
-/* ======================================
-   STAGE (Main White Box with expressive shadows)
-   ====================================== */
 .stage {
   position: relative;
   width: 85%;
@@ -55,7 +47,6 @@ body {
   margin-top: -20px;
   overflow: hidden;
 
-  /* 💫 Layered shadows for expressive depth */
   box-shadow:
     0 12px 24px rgba(0, 0, 0, 0.08),
     0 24px 48px rgba(135, 142, 216, 0.2),
@@ -66,9 +57,6 @@ body {
   animation: fadeInUp 0.8s ease forwards;
 }
 
-/* ======================================
-   FLOATING BITS (Sticky Notes, Cards)
-   ====================================== */
 .float {
   position: absolute;
   background: #fff;
@@ -97,9 +85,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ======================================
-   CENTER CONTENT
-   ====================================== */
 .content {
   max-width: 820px;
   margin: 0 auto;
@@ -107,9 +92,6 @@ body {
   padding: 80px 20px 40px; /* 👈 increased top padding from 20px to 80px */
 }
 
-/* ======================================
-   KICKER / HERO LOGO BOX (with outline)
-   ====================================== */
 .kicker {
   display: inline-flex;
   align-items: center;
@@ -150,9 +132,6 @@ h1 {
   margin: 0 auto 28px;
 }
 
-/* ======================================
-   CTA BUTTON
-   ====================================== */
 .cta {
   display: inline-block;
   background: var(--brand);
@@ -170,9 +149,6 @@ h1 {
   transform: translateY(-2px);
 }
 
-/* ======================================
-   RESPONSIVE ADJUSTMENTS
-   ====================================== */
 @media (max-width: 900px) {
   .stage {
     width: 90%;
@@ -191,9 +167,6 @@ h1 {
   .float { display: none; }
 }
 
-/* ======================================
-   ACCESSIBILITY (reduce motion)
-   ====================================== */
 @media (prefers-reduced-motion: reduce) {
   .stage, .float {
     animation: none !important;

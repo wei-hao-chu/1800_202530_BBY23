@@ -12,3 +12,7 @@ import { initializeApp } from "firebase/app";
 const app = initializeApp(firebaseConfig);
 
 .env
+VITE_FIREBASE_API_KEY="AIzaSyAx0DwlMKs7ijM46MPIq5xR4G9Gd1LLIr4",
+VITE_FIREBASE_AUTH_DOMAIN="pathfinder-32bdb.firebaseapp.com",
+VITE_FIREBASE_PROJECT_ID="pathfinder-32bdb",
+VITE_FIREBASE_APP_ID="1:484468095034:web:f86eeb73b3b72d8a39dd03"

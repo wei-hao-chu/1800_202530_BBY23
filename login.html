@@ -8,12 +8,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
   <link rel="stylesheet" href="src/styles/auth.css" />
-  <!-- Optional global components -->
-  <script type="module" src="/src/template/site-navbar.js"></script>
-  <script type="module" src="/src/template/site-footer.js"></script>
+  <link rel="stylesheet" href="src/styles/style.css" />
+  <script type="module" src="/src/firebaseConfig.js"></script>
+    <script type="module" src="/src/authentication.js"></script>
+    <script type="module" src="/src/loginSignup.js"></script>
 </head>
 <body>
-  <site-navbar></site-navbar>
+    <body>
+    <header id="home">
+      <div class="left">
+        <div class="row">
+          <ul>
+            <img id="logo" src="images/study.png" width="10%" alt="Study" />
+            <li><a href="app_home.html">App</a></li>
+            <li><a href="#how">FAQ</a></li>
+            <li><a href="#info">Surveys</a></li>
+            <li><a href="#about">News</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="right">
+        <div class="row">
+          <h4>Pathfinder</h4>
+          <img src="images/open book.jpg" width="20%" alt="book logo" />
+        </div>
+      </div>
+    </header>
+
 
   <main class="auth-hero">
     <section class="auth-card" aria-labelledby="loginTitle">
@@ -40,12 +61,14 @@
         <div class="meta">
           <a href="signup.html">Create account</a>
         </div>
-
+        <div class="actions">
+        <button type="submit" class="btn submit">Log In</button>
+        </div>
       </form>
     </section>
   </main>
 
-  <site-footer></site-footer>
+  <footer>Page Created By Matthew, Vincent, Melina, and Hazen.</footer>
 
   <!-- Hook up your Firebase logic to these IDs -->
   <script type="module">
