@@ -112,60 +112,39 @@ This can vary, and may change in the future, this is merely in its current state
 - If Firestore operations fail, verify your `VITE_` env variables and Firebase project rules.
 - If all else fails its a syntax error, for example:
 
----
+### Example 1
 
 **Wrong**:
----
 ```
 This is an example <br         # Misisng ">"
 ```
----
 **Correct**:
----
 ```
 This is an example <br>
 ```
----
 
----
-
-
----
+### Example 2
 
 **Wrong**:
----
 ```
 <span>Another example</span>
 </span>                        # Duplicate closing tag
 ```
----
 **Correct**:
----
 ```
 <span>Another example</span>
 ```
----
 
----
-
-
----
+### Example 3
 
 **Wrong**:
----
 ```
 <b>Last example                # Missing closing tag
 ```
----
 **Correct**:
----
 ```
 <b>Last example</b>
 ```
----
-
----
-
 
 ---
 
