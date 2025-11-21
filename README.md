@@ -150,10 +150,10 @@ This is an <br> example
 
 ## Contributors
 
-- **Hazen1Yang** - (Hazen) BCIT CST Student
-- **Gamecoder3D** - (Matthew V.) BCIT CST Student who loves videogames. Fun fact: my favorite color is orange.
-- **Vincent** - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
-- **Melina Bazrafkan** - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
+- **Hazen1Yang** *(Hazen Y.)* - BCIT CST Student
+- **Gamecoder3D** *(Matthew V.)* - BCIT CST Student who loves videogames. Fun fact: my favorite color is orange.
+- **wei-hao-chu** *(Vincent C.)* - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
+- **melinabcit OR mln-eia** *(Melina B.)* - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
 
 ---
 
