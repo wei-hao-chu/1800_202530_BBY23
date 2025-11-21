@@ -116,11 +116,11 @@ This can vary, and may change in the future, this is merely in its current state
 
 **Wrong**:
 ```
-This is an example <br         # Misisng ">"
+This is an <br example         # Misisng ">"
 ```
 **Correct**:
 ```
-This is an example <br>
+This is an <br> example
 ```
 
 ### Example 2
