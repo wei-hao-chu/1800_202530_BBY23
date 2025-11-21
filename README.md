@@ -2,54 +2,170 @@
 
 ## Overview
 
-PathFinder is a client-side JavaScript web application that helps users discover and explore their career paths.
-
-Developed for the COMP 1800 course, this project applies User-Centred Design practices and agile project management, and demonstrates integration with Firebase backend services for storing user favorites.
+PathFinder is a client-side web application (HTML/CSS/JavaScript) created for the COMP 1800 course. It helps users explore career paths, set and track personal career goals, and take short quizzes to assist with career decisions. The app uses Firebase for authentication and Firestore for per-user data persistence.
 
 ---
 
 ## Features
 
-- Browse a list career paths
-- Set goals
-- Do personalised quizzes
-- Responsive design for desktop and mobile
+- Browse career-related content and informational pages
+- Per-user goals (create / edit / delete) stored in Firestore
+- Small quizzes and progress tracking
+- Responsive layout suitable for desktop and mobile
 
 ---
 
-## Technologies Used
+## Technologies
 
-Example:
-
-- **Frontend**: HTML, CSS, JavaScript
+- **Frontend**: HTML, CSS, JavaScript (ES modules)
+- **Styling**: plain CSS (styles under `src/styles/`)
 - **Build Tool**: [Vite](https://vitejs.dev/)
-- **Backend**: Firebase for hosting
-- **Database**: Firestore
+- **Backend**: Firebase for hosting and authentication, Firestore
+- **Database**: `bootstrap`, `firebase`
 
 ---
 
 ## Usage
 
-1. Open your browser and visit `http://localhost:3000`.
-2. Browse our about page on the main page.
+1. Install dependencies:
+
+```powershell
+npm install
+```
+
+2. Start the dev server:
+
+```powershell
+npm run dev
+```
+
+3. Open the app in your browser at `http://localhost:3000`
+
+Notes:
+
+- Firebase configuration values are read from environment variables prefixed with `VITE_` (see `src/firebaseConfig.js` and any `.env` present). Do NOT commit secret keys to version control.
 
 ---
 
-## Project Structure
+## Project Structure (current)
+
+This can vary, and may change in the future, this is merely in its current state.
 
 ```
-MAY VARY
 1800_202530_BBY23/
+├── images/               #  Contains many images
+├── node_modules/         #  Contains many folders and files
 ├── src/
-│   ├── main.js
-├── styles/
-│   └── style.css
-├── public/
-├── images/
+│	├── components/
+│	│	├── footer.js
+│	│	└── navbar.js
+│	├── styles/
+│	│   ├── auth.css
+│	│   ├── quiz.css
+│	│   └── style.css
+│	├── app.js
+│	├── authentication.js
+│	├── firebaseConfig.js
+│	├── goals.js
+│	├── goalsPage.js
+│	├── loginSignup.js
+│	├── main.js
+│	└── quiz.js
+├── .env
+├── .gitignore
+├── goals.html
 ├── index.html
+├── login.html
+├── package-lock.json
 ├── package.json
+├── quiz.html
 ├── README.md
+├── signup.html
+└── template.html
 ```
+
+---
+
+## Important Files
+
+- `src/firebaseConfig.js` — Firebase initialization; expects `VITE_` env variables.
+- `src/authentication.js` — helper functions for auth state and login/signup handling.
+- `src/goalsPage.js` / `src/app_goals.js` — UI logic for the Goals page (create/list/edit/delete goals).
+- `src/goals.js` — smaller utilities related to a single goal and progress entries.
+- `src/components/navbar.js` and `src/components/footer.js` — web components used across pages.
+- `src/styles/style.css` — main site styles; page-specific CSS lives in `src/styles/`.
+
+---
+
+## Recommended Local Workflow
+
+- Use `npm run dev` while developing (automatic reload).
+- Keep Firebase environment values in a local `.env` with keys like `VITE_FIREBASE_API_KEY` (already ignored in `.gitignore`).
+- If you rename or move components, update the HTML script tags that reference them (e.g., `/src/components/navbar.js`).
+
+---
+
+
+## Troubleshooting
+
+- If components fail to load, check the browser console for 404s and adjust the script `src` paths in the HTML files.
+- If Firestore operations fail, verify your `VITE_` env variables and Firebase project rules.
+- If all else fails its a syntax error, for example:
+
+---
+
+**Wrong**:
+---
+```
+This is an example <br         # Misisng ">"
+```
+---
+**Correct**:
+---
+```
+This is an example <br>
+```
+---
+
+---
+
+
+---
+
+**Wrong**:
+---
+```
+<span>Another example</span>
+</span>                        # Duplicate closing tag
+```
+---
+**Correct**:
+---
+```
+<span>Another example</span>
+```
+---
+
+---
+
+
+---
+
+**Wrong**:
+---
+```
+<b>Last example                # Missing closing tag
+```
+---
+**Correct**:
+---
+```
+<b>Last example</b>
+```
+---
+
+---
+
 
 ---
 
@@ -66,7 +182,7 @@ MAY VARY
 
 - Images are free to use.
 - Code snippets were adapted from resources such as [Stack Overflow](https://stackoverflow.com/) and [MDN Web Docs](https://developer.mozilla.org/).
-- Icons sourced from [FontAwesome](https://fontawesome.com/) and images from [Unsplash](https://unsplash.com/).
+- Icons sourced from [FlatIcon](https://www.flaticon.com/).
 
 ---
 
@@ -86,4 +202,4 @@ MAY VARY
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is distributed under the MIT License.
