@@ -13,7 +13,7 @@ class SiteNavbar extends HTMLElement {
         :host { display: block; width: 100%; }
 
         nav {
-          background-color: #413C58;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
           color: #f1faee;
           padding: clamp(0.5rem, 1.2vw, 0.9rem) clamp(0.75rem, 2vw, 1.25rem);
           position: relative;
@@ -140,17 +140,24 @@ class SiteNavbar extends HTMLElement {
         </div>
 
         <div class="side-menu" id="sideMenu" aria-hidden="true">
-          <div class="menu-logo">Pathfinder</div>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/help">Help</a>
-          <a href="/contact">Contact</a>
-          <a href="/app_home.html">App</a>
+          <a href="index.html"><div class="menu-logo">Pathfinder</div></a>
+            <a href="app_home.html">App</a>
+            <a href="#how">FAQ</a>
+            <a href="quiz.html">Surveys</a>
+            <a href="#about">News</a>
+            <a href="goals.html">Goals</a>
         </div>
 
         <div class="overlay" id="overlay"></div>
 
         <div class="right-section">
+        <button
+          class="btn"
+          onclick="window.location.href='login.html'"
+          type="button"
+        >
+          Login/Signup
+        </button>
           <div class="search-container">
             <input type="search" id="navSearch" placeholder="Search" aria-label="Search">
             <button type="button" class="search-btn" aria-label="Search">
@@ -159,7 +166,9 @@ class SiteNavbar extends HTMLElement {
               </svg>
             </button>
           </div>
+          <a href="index.html">
           <span class="site-brand">Pathfinder</span>
+          </a>
         </div>
       </nav>
     `;

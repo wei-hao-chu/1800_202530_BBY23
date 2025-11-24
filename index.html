@@ -17,42 +17,37 @@
     <script type="module" src="/src/main.js"></script>
     <script
       type="module"
-      src="/src/components/template/site-navbar.js"
+      src="/src/components/navbar.js"
     ></script>
     <script
       type="module"
-      src="/src/components/template/site-footer.js"
+      src="/src/components/footer.js"
     ></script>
   </head>
 
   <body>
     <site-navbar></site-navbar>
-    <header id="home">
-      <div class="left">
-        <div class="row">
-          <img id="logo" src="images/study.png" width="10%" alt="Study" />
-          <ul>
-            <li><a href="app_home.html">App</a></li>
-            <li><a href="#how">FAQ</a></li>
-            <li><a href="#info">Surveys</a></li>
-            <li><a href="#about">News</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="right">
-        <div class="row">
-          <h4>Pathfinder</h4>
-          <img src="images/open book.jpg" width="20%" alt="book logo" />
-        </div>
-      </div>
-    </header>
 
     <aside>
+      <!-- Main content goes here -->
       <div id="inbetween">
+        <img
+          src="https://www.svgrepo.com/show/530614/map.svg"
+          alt="map"
+          width="200"
+        />
         <h1>
-          Welcome to <br />
-          Pathfinder
+          Welcome to PathFinder, <span id="name-goes-here">my friend!</span>
+          <br />
+          <span id="quote-goes-here">Join other students like yourself.</span>
         </h1>
+        <button
+          class="btn"
+          onclick="window.location.href='login.html'"
+          type="button"
+        >
+          Login/Signup
+        </button>
       </div>
 
       <div id="middle">
@@ -68,13 +63,18 @@
       </div>
 
       <div id="bottom">
+        <h2>Think, plan, and track<br />your career all in one place</h2>
+        <p>
+          Efficiently manage your goals, job applications, and professional
+          growth — with personalized career insights and updates.
+        </p>
         <div id="slim">
           <div id="how">
             <div class="left">How did it all start?</div>
           </div>
           <div class="right">
             <a
-              href="https://en.wikipedia.org/wiki/History_of_video_games"
+              href="https://www.figma.com/design/Ro3aqiWxgU1cnalbVlPrXl"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -111,7 +111,12 @@
         </div>
 
         <figure id="about">
-          <figcaption>BCIT</figcaption>
+          <a
+            href="https://www.bcit.ca/programs/computer-systems-technology-diploma-full-time-5500dipma/"
+            target="_blank"
+          >
+            <figcaption>BCIT</figcaption>
+          </a>
         </figure>
       </div>
       <site-footer></site-footer>

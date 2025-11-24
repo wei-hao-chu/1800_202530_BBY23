@@ -26,8 +26,9 @@ export async function signupUser(name, email, password) {
     await setDoc(doc(db, "users", user.uid), {
       name: name,
       email: email,
-      country: "Canada",
-      school: "BCIT"
+      country: "Canada", // Default value
+      school: "BCIT",     // Default value
+      career: career
     });
     console.log("Firestore user document created successfully!");
   } catch (err) {
