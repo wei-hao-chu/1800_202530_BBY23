@@ -26,16 +26,14 @@ class SiteNavbar extends HTMLElement {
         <input class="search" type="search" placeholder="Search" />
         <button
           class="btn btn-outline-light d-none d-sm-inline-block"
-          type="submit"
+          type="button"
           aria-label="Search"
         >
-          <!-- magnifying glass icon (inline SVG) -->
-
-        <img
-          src="https://www.svgrepo.com/show/486229/magnifying-glass-backup.svg"
-          class="icon right-icon"
-          alt="help"
-        />
+          <img
+            src="https://www.svgrepo.com/show/486229/magnifying-glass-backup.svg"
+            class="icon right-icon"
+            alt="help"
+          />
         </button>
 
         <img

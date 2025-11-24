@@ -9,7 +9,6 @@ console.log("loginSignup.js loaded");
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
-import "./styles/style.css";
 import { loginUser, signupUser, authErrorMessage } from "./authentication.js";
 
 // --- Login and Signup Page ---
@@ -25,7 +24,7 @@ function initAuthUI() {
   const toLoginBtn = document.getElementById("toLogin");
   const loginForm = document.getElementById("loginForm");
   const signupForm = document.getElementById("signupForm");
-  const redirectUrl = "main.html";
+  const redirectUrl = "app_goals.html";
 
   // --- Helper Functions ---
   // Toggle element visibility

@@ -8,29 +8,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
   <link rel="stylesheet" href="src/styles/auth.css" />
   <link rel="stylesheet" href="src/styles/style.css" />
+  <script type="module" src="/src/components/template/site-navbar.js"></script>
 </head>
 
 <body>
-
-<header id="home">
-  <div class="left">
-    <div class="row">
-      <ul>
-        <img id="logo" src="images/study.png" width="10%" alt="Study" />
-        <li><a href="app_home.html">App</a></li>
-        <li><a href="#how">FAQ</a></li>
-        <li><a href="#info">Surveys</a></li>
-        <li><a href="#about">News</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="right">
-    <div class="row">
-      <h4>Pathfinder</h4>
-      <img src="images/open book.jpg" width="20%" alt="book logo" />
-    </div>
-  </div>
-</header>
+<site-navbar></site-navbar>
 
 <main class="auth-hero">
 
@@ -63,11 +45,10 @@
 
     <div class="meta" style="margin-top: 12px; text-align:center;">
       <span>Already have an account?</span>
-      <a id="toLogin" href="login.html">Create</a>
+      <a id="toLogin" href="#">Create</a>
     </div>
   </section>
 
-  <section id="loginView" class="d-none"></section>
 
 </main>
 
@@ -76,6 +57,6 @@
 <script type="module" src="/src/firebaseConfig.js"></script>
 <script type="module" src="/src/authentication.js"></script>
 <script type="module" src="/src/loginSignup.js"></script>
-
+<script type="module" src="/src/app.js"></script>
 </body>
 </html>
