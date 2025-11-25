@@ -18,6 +18,20 @@ export default defineConfig({
         quiz: resolve(__dirname, "quiz.html"),
         // Don't put template.html here since user shouldn't even need to access it.
       },
+      output: {
+        preserveModules: true,
+        // Keeps everything in "dist" folder to have the same folder structure as "src" folder.
+        preserveModulesRoot: "src",
+        assetFileNames: (assetInfo) => {
+          const srcIndex = assetInfo.name.indexOf("src/");
+          if (srcIndex !== -1) {
+            // This puts assets in the same relative folder as they were in 'src'
+            return assetInfo.name.substring(srcIndex + 4); // Skip 'src/'
+          }
+          // Fallback for assets not in src
+          return "assets/[name][extname]";
+        },
+      },
     },
   },
 });

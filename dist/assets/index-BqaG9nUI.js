@@ -1,0 +1,1 @@
+import"./app-BXliNg_N.js";import{o as n,g as m,d as s,a as i}from"./authentication-GpCKKhK3.js";import"./footer-5uavygOe.js";function d(){const e=document.getElementById("name-goes-here");n(async t=>{if(!t){location.mhref="index.html";return}const a=await m(s(i,"users",t.uid)),o=a.exists()?a.data().name:t.displayName||t.email;e&&(e.textContent=`${o}!`)})}d();
