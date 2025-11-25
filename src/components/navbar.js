@@ -36,7 +36,7 @@ class SiteNavbar extends HTMLElement {
         }
         .hamburger:hover { opacity: 0.8; }
         .bar { width: clamp(20px, 4vw, 26px); height: 3px; background-color: #f1faee; border-radius: 2px; transition: background-color 0.3s ease; }
-        .hamburger:hover .bar { background-color: #878ed8ff; }
+        .hamburger:hover .bar { background-color: black; }
 
         .side-menu {
           position: fixed; top: 0; left: 0; width: 260px; max-width: 80vw; height: 100%;
