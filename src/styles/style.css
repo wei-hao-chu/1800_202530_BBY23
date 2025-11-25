@@ -242,6 +242,8 @@ aside {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 20px var(--shadow);
+  padding: 1.5em;
+  text-align: center;
 }
 #about img {
   width: 100%;
@@ -254,7 +256,14 @@ figcaption {
   padding: 1rem;
   font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 600;
-  text-align: center;
+  border-radius: 8px;
+}
+figcaption:hover {
+  transform: translateY(-2px);
+  background: #0056b3;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
 }
 
 /* Footer / site-footer */
@@ -290,6 +299,7 @@ textarea {
   border-radius: 6px;
   font-size: 1rem;
 }
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -308,6 +318,7 @@ textarea {
   transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease,
     backdrop-filter 0.12s ease;
 }
+
 .btn:hover {
   transform: translateY(-2px);
   background: rgba(8, 12, 20, 0.62);
@@ -329,6 +340,54 @@ textarea {
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  padding: 10px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-link:hover {
+  color: #a71d2a;
 }
 
 /* Compact bordered container used for small inline/grouped content */

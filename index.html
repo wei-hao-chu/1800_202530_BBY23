@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Pathfinder</title>
+    <title>Pathfinder Main Page</title>
     <meta name="pathfinder-application" content="pathfinder" />
     <meta charset="utf-8" />
     <meta name="author" content="Matthew, Hazen, Vincent, Melina." />
@@ -11,18 +11,13 @@
       name="description"
       content="Pathfinder - A career guidance platform helping you find the right career path."
     />
-    <meta name="generator" content="Phoenix Code" />
+    <meta name="generator" content="Phoenix Code, VS Code" />
     <meta name="keywords" content="XHTML,CSS,BCIT" />
-    <link rel="stylesheet" href="src/styles/style.css" />
+
     <script type="module" src="/src/main.js"></script>
-    <script
-      type="module"
-      src="/src/components/navbar.js"
-    ></script>
-    <script
-      type="module"
-      src="/src/components/footer.js"
-    ></script>
+    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/src/components/navbar.js"></script>
+    <script type="module" src="/src/components/footer.js"></script>
   </head>
 
   <body>
@@ -51,10 +46,19 @@
       </div>
 
       <div id="middle">
-        <img src="images/bus.png" width="10%" alt=" Bus" />
-        <img src="images/textbook.png" width="10%" alt="Textbook" />
-        <img src="images/school-bag.png" width="10%" alt="School Bag" />
-        <img src="images/school.png" width="10%" alt="School" />
+        <a href="login.html">
+          <img src="images/bus.png" width="10%" alt=" Bus" />
+        </a>
+        <a href="quiz.html">
+          <img src="images/textbook.png" width="10%" alt="Textbook" />
+        </a>
+        <a href="goals.html">
+          <img src="images/school-bag.png" width="10%" alt="School Bag" />
+        </a>
+        <!-- Chnage this one to new when you make it and add where they lead to-->
+        <a href="index.html">
+          <img src="images/school.png" width="10%" alt="School" />
+        </a>
         <div id="side_text">
           If you're struggling to choose a career path, you're not alone. Many
           people find it challenging to decide on a career that aligns with
@@ -115,6 +119,10 @@
             href="https://www.bcit.ca/programs/computer-systems-technology-diploma-full-time-5500dipma/"
             target="_blank"
           >
+            <img
+              src="https://www.reminetwork.com/wp-content/uploads/bcit-1.jpg"
+              width="90%"
+            />
             <figcaption>BCIT</figcaption>
           </a>
         </figure>

@@ -1,17 +1,24 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap";
 
-//--------------------------------------------------------------
-// If you have custom global styles, import them as well:
-//--------------------------------------------------------------
-import '/src/styles/app_home.css';
+// Custom global styles:
+import "/src/styles/style.css";
 
-//--------------------------------------------------------------
-// Custom global JS code (shared with all pages)can go here.
-//--------------------------------------------------------------
+// Custom global JS code (shared with all pages)
+onAuthReady(async (user) => {
+  if (!user) {
+    const currentPage = window.location.pathname.split("/").pop();
+    // These are the only pages where it won't redirect to login
+    const allowedPages = ["login.html", "signup.html", "index.html"];
+    if (!allowedPages.includes(currentPage)) {
+      // If no user is signed in it redirects back to login page.
+      location.href = "login.html";
+    }
+    return;
+  }
 
-// This is an example function. Replace it with your own logic.
-function sayHello() {
-  // TODO: implement your logic here
-}
-document.addEventListener('DOMContentLoaded', sayHello);
+  const userDoc = await getDoc(doc(db, "users", user.uid));
+  const name = userDoc.exists()
+    ? userDoc.data().name
+    : user.displayName || user.email;
+});
