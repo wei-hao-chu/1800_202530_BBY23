@@ -16,7 +16,7 @@ function showDashboard() {
   onAuthReady(async (user) => {
     if (!user) {
       // If no user is signed in → redirect back to login page.
-      location.href = "index.html";
+      location.mhref = "index.html";
       return;
     }
 
@@ -32,25 +32,5 @@ function showDashboard() {
   });
 }
 
-// Function to read the quote of the day from Firestore
-function readQuote(day) {
-  const quoteDocRef = doc(db, "quotes", day); // Get a reference to the document
 
-  onSnapshot(
-    quoteDocRef,
-    (docSnap) => {
-      // Listen for real-time updates
-      if (docSnap.exists()) {
-        const el = document.getElementById("quote-goes-here");
-        if (el) el.innerHTML = docSnap.data().quote;
-      } else {
-        console.log("No such document!");
-      }
-    },
-    (error) => {
-      console.error("Error listening to document: ", error);
-    }
-  );
-}
-
-readQuote("tuesday");
+showDashboard();

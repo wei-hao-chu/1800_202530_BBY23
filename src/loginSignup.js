@@ -1,12 +1,7 @@
-// -------------------------------------------------------------
-// src/loginSignup.js
-// -------------------------------------------------------------
-// Part of the COMP1800 Projects 1 Course (BCIT).
-// Starter code provided for students to use and adapt.
-// Manages the login/signup form behaviour and redirects.
-// -------------------------------------------------------------
 console.log("loginSignup.js loaded");
 
+// The two imports here are already in app.js which is already loaded
+// by both login.html and signup.html so no need to re-import them here.
 import { loginUser, signupUser, authErrorMessage } from "./authentication.js";
 
 // --- Login and Signup Page ---
@@ -22,7 +17,7 @@ function initAuthUI() {
   const toLoginBtn = document.getElementById("toLogin");
   const loginForm = document.getElementById("loginForm");
   const signupForm = document.getElementById("signupForm");
-  const redirectUrl = "main.html";
+  const redirectUrl = "app_goals.html";
 
   // --- Helper Functions ---
   // Toggle element visibility
