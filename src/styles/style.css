@@ -19,13 +19,6 @@
   --mint-cream: #eef4edff;
 }
 
-/* Consolidated responsive stylesheet
-   - Removed device-specific media query blocks
-   - Use fluid sizes (clamp) so the layout adapts for desktop/tablet/phone
-   - Use a column flex layout so footer sits at the bottom of the page
-*/
-
-/* Reset / universal */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -193,7 +186,6 @@ aside {
 #bottom {
   padding: clamp(1rem, 3vw, 3rem);
   background-color: var(--white);
-  text-align: center;
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -4px 20px var(--shadow);
 }
@@ -217,9 +209,11 @@ aside {
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: space-between; /* push left to left, right to right */
   padding: 1rem;
   background: var(--light-bg);
   border-radius: 10px;
+  width: 100%;
 }
 #slim .left {
   font-size: clamp(1rem, 2.2vw, 1.5rem);
