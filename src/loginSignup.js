@@ -17,6 +17,7 @@ function initAuthUI() {
   const toLoginBtn = document.getElementById("toLogin");
   const loginForm = document.getElementById("loginForm");
   const signupForm = document.getElementById("signupForm");
+  // What page to take the user to after logging in.
   const redirectUrl = "main.html";
 
   // --- Helper Functions ---
@@ -101,7 +102,15 @@ function initAuthUI() {
     setSubmitDisabled(signupForm, true);
     try {
       await signupUser(name, email, password);
-      location.href = redirectUrl;
+      // After successful signup, show the login view so the user can sign in
+      showError("Account created — please sign in.");
+      setVisible(signupView, false);
+      setVisible(loginView, true);
+      const loginEmailEl = document.getElementById("loginEmail");
+      if (loginEmailEl) {
+        loginEmailEl.value = email;
+        loginEmailEl.focus();
+      }
     } catch (err) {
       showError(authErrorMessage(err));
       console.error(err);
