@@ -17,7 +17,7 @@ export default defineConfig({
         goals: resolve(__dirname, "goals.html"),
         quiz: resolve(__dirname, "quiz.html"),
         // Even though users shouldn't even need to access template.html
-        // i still put it just in case.
+        // i still put it in just in case.
         template: resolve(__dirname, "template.html"),
       },
     },
