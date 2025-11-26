@@ -1,5 +1,12 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  updateDoc,
+  addDoc,
+  collection,
+  serverTimestamp,
+} from "firebase/firestore";
 import { auth, db } from "./firebaseConfig.js";
 import "./app.js";
 import "./goalsPage.js";
