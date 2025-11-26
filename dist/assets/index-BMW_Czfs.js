@@ -1,1 +1,0 @@
-import{o,g as s,d as m,a as d}from"./app-B_5USRAV.js";function c(){const e=document.getElementById("name-goes-here");o(async a=>{const t=await s(m(d,"users",a.uid)),n=t.exists()?t.data().name:a.displayName||a.email;e&&(e.textContent=`${n}!`)})}c();

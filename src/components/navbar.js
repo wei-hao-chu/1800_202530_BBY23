@@ -142,10 +142,10 @@ class SiteNavbar extends HTMLElement {
         <div class="side-menu" id="sideMenu" aria-hidden="true">
           <a href="index.html"><div class="menu-logo">Pathfinder</div></a>
             <a href="main.html">App</a>
-            <a href="index.html#about">About</a>
             <a href="quiz.html">Surveys</a>
-            <a href="index.html#info">Info</a>
             <a href="goals.html">Goals</a>
+            <a href="index.html#slim">About Us</a>
+            <a href="index.html#bcit">BCIT</a>
         </div>
 
         <div class="overlay" id="overlay"></div>
