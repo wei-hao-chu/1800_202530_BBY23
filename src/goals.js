@@ -1,8 +1,8 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { auth, db } from "./firebaseConfig.js";
-import "/src/app.js";
-import "/src/goalsPage.js";
+import "./app.js";
+import "./goalsPage.js";
 
 //-----------------------------------------------------------
 // Display Job / Goal Title

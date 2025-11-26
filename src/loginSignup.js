@@ -1,8 +1,8 @@
 console.log("loginSignup.js loaded");
 
-import "/src/styles/auth.css";
-import "/src/app.js";
-import "/src/firebaseConfig.js";
+import "./styles/auth.css";
+import "./app.js";
+import "./firebaseConfig.js";
 import { loginUser, signupUser, authErrorMessage } from "./authentication.js";
 
 // --- Login and Signup Page ---

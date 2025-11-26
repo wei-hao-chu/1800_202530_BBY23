@@ -1,3 +1,5 @@
+console.log("app.js loaded");
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import { onAuthReady } from "./authentication.js";
@@ -13,11 +15,11 @@ import {
 } from "firebase/firestore";
 
 // Global Footer and Navbar components:
-import "/src/components/footer.js";
-import "/src/components/navbar.js";
+import "./components/footer.js";
+import "./components/navbar.js";
 
 // Custom global styles:
-import "/src/styles/style.css";
+import "./styles/style.css";
 
 // Custom global JS code (shared with all pages)
 onAuthReady(async (user) => {
