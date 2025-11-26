@@ -53,8 +53,9 @@ This can vary, and may change in the future, this is merely in its current state
 
 ```
 1800_202530_BBY23/
-├── images/               #  Contains many images
-├── node_modules/         #  Contains many folders and files
+├── dist/                  #  Contains some folders and files for hosting
+├── public
+│   └── images/            #  Contains many images
 ├── src/
 │	├── components/
 │	│	├── footer.js
@@ -68,20 +69,25 @@ This can vary, and may change in the future, this is merely in its current state
 │	├── firebaseConfig.js
 │	├── goals.js
 │	├── goalsPage.js
+│	├── index.js
 │	├── loginSignup.js
-│	├── main.js
 │	└── quiz.js
-├── .env
+├── .firebaserc
 ├── .gitignore
+├── firebase.json
+├── firestore.indexes.json
+├── firestore.rules
 ├── goals.html
 ├── index.html
 ├── login.html
+├── main.html
 ├── package-lock.json
 ├── package.json
 ├── quiz.html
 ├── README.md
 ├── signup.html
-└── template.html
+├── template.html
+└── vite.config.js
 ```
 
 ---
@@ -105,7 +111,6 @@ This can vary, and may change in the future, this is merely in its current state
 
 ---
 
-
 ## Troubleshooting
 
 - If components fail to load, check the browser console for 404s and adjust the script `src` paths in the HTML files.
@@ -115,10 +120,13 @@ This can vary, and may change in the future, this is merely in its current state
 ### Example 1
 
 **Wrong**:
+
 ```
 This is an <br example         # Misisng ">"
 ```
+
 **Correct**:
+
 ```
 This is an <br> example
 ```
@@ -126,11 +134,14 @@ This is an <br> example
 ### Example 2
 
 **Wrong**:
+
 ```
 <span>Another example</span>
 </span>                        # Duplicate closing tag
 ```
+
 **Correct**:
+
 ```
 <span>Another example</span>
 ```
@@ -138,10 +149,13 @@ This is an <br> example
 ### Example 3
 
 **Wrong**:
+
 ```
 <b>Last example                # Missing closing tag
 ```
+
 **Correct**:
+
 ```
 <b>Last example</b>
 ```
@@ -150,10 +164,10 @@ This is an <br> example
 
 ## Contributors
 
-- **Hazen1Yang** *(Hazen Y.)* - BCIT CST Student
-- **Gamecoder3D** *(Matthew V.)* - BCIT CST Student who loves videogames. Fun fact: my favorite color is orange.
-- **wei-hao-chu** *(Vincent C.)* - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
-- **melinabcit OR mln-eia** *(Melina B.)* - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
+- **Hazen1Yang** _(Hazen Y.)_ - BCIT CST Student
+- **Gamecoder3D** _(Matthew V.)_ - BCIT CST Student who loves videogames. Fun fact: my favorite color is orange.
+- **wei-hao-chu** _(Vincent C.)_ - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
+- **melinabcit OR mln-eia** _(Melina B.)_ - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
 
 ---
 
