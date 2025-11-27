@@ -15,7 +15,7 @@ class SiteNavbar extends HTMLElement {
         :host { display: block; width: 100%; }
 
         nav {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: var(--secondary-color);
           color: #f1faee;
           padding: clamp(0.5rem, 1.2vw, 0.9rem) clamp(0.75rem, 2vw, 1.25rem);
           position: relative;
@@ -144,7 +144,9 @@ class SiteNavbar extends HTMLElement {
 
       <nav>
         <div class="hamburger" id="hamburger" aria-label="Open menu" tabindex="0">
-          <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
         </div>
 
         <div class="side-menu" id="sideMenu" aria-hidden="true">
@@ -152,6 +154,7 @@ class SiteNavbar extends HTMLElement {
             <a href="main.html">App</a>
             <a href="quiz.html">Surveys</a>
             <a href="goals.html">Goals</a>
+            <a href="task.html">Tasks</a>
             <a href="index.html#slim">About Us</a>
             <a href="index.html#bcit">BCIT</a>
         </div>

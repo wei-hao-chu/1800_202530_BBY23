@@ -114,7 +114,7 @@ function renderQuestions() {
     const questionNumber = startIndex + index;
     const questionDiv = createQuestionElement(question, questionNumber);
     questionsContainer.appendChild(questionDiv);
-  });
+  }); 
 }
 
 // Create a question element
