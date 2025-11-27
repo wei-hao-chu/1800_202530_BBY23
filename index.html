@@ -14,7 +14,7 @@
     <meta name="generator" content="Phoenix Code, VS Code" />
     <meta name="keywords" content="XHTML,CSS,BCIT" />
     <!-- The little icon that appears beside the tab name. -->
-    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <link rel="icon" href="/public/images/logo.png" type="image/png" />
 
     <script type="module" src="/src/index.js"></script>
   </head>
@@ -23,41 +23,46 @@
     <site-navbar></site-navbar>
     <aside>
       <!-- Main content goes here -->
-      <div class="mobile-img">
-        <div id="inbetween">
-          <a href="index.html">
-            <img
-              src="https://www.svgrepo.com/show/530614/map.svg"
-              alt="map"
-              width="13%"
-          /></a>
-          <h1>
-            Welcome to PathFinder, <span id="name-goes-here">my friend!</span>
-            <br />
-            <span id="quote-goes-here">Join other students like yourself.</span>
-          </h1>
-          <button
-            id="indexAuthBtn"
-            class="btn"
-            onclick="window.location.href='login.html'"
-            type="button"
-          >
-            Login/Signup
-          </button>
-        </div>
+      <div id="inbetween">
+        <a href="index.html">
+          <!-- yes, it is intentionally set to not use a percentage for width. -->
+          <img
+            src="https://www.svgrepo.com/show/530614/map.svg"
+            alt="map"
+            width="200"
+        /></a>
+        <h1>
+          Welcome to PathFinder, <span id="name-goes-here">my friend!</span>
+          <br />
+          <span id="quote-goes-here">Join other students like yourself.</span>
+        </h1>
+        <button
+          id="indexAuthBtn"
+          class="btn"
+          onclick="window.location.href='login.html'"
+          type="button"
+        >
+          Login/Signup
+        </button>
+      </div>
 
+      <div class="mobile-img">
         <div id="middle">
           <a href="login.html">
-            <img src="/images/bus.png" width="10%" alt=" Bus" />
+            <img src="/public/images/bus.png" width="10%" alt=" Bus" />
           </a>
           <a href="quiz.html">
-            <img src="/images/textbook.png" width="10%" alt="Textbook" />
+            <img src="/public/images/textbook.png" width="10%" alt="Textbook" />
           </a>
           <a href="goals.html">
-            <img src="/images/school-bag.png" width="10%" alt="School Bag" />
+            <img
+              src="/public/images/school-bag.png"
+              width="10%"
+              alt="School Bag"
+            />
           </a>
           <a href="main.html">
-            <img src="/images/school.png" width="10%" alt="School" />
+            <img src="/public/images/school.png" width="10%" alt="School" />
           </a>
           <div id="side_text">
             If you're struggling to choose a career path, you're not alone. Many
@@ -96,7 +101,10 @@
             choices. This was started as a school project for BCIT.
           </div>
           <a href="https://www.bcit.ca/" target="_blank"
-            ><img src="/images/classroom.png" width="10%" alt="Classroom"
+            ><img
+              src="/public/images/classroom.png"
+              width="10%"
+              alt="Classroom"
           /></a>
 
           <h2>Our goal</h2>
@@ -108,7 +116,7 @@
             yourself into.
           </div>
           <a href="goals.html"
-            ><img src="/images/children.png" width="10%" alt="Children"
+            ><img src="/public/images/children.png" width="10%" alt="Children"
           /></a>
 
           <h2>How we'll do it</h2>
@@ -119,7 +127,7 @@
             in the field and see what companies are looking for.
           </div>
           <a href="quiz.html"
-            ><img src="/images/board.png" width="10%" alt="Board"
+            ><img src="/public/images/board.png" width="10%" alt="Board"
           /></a>
         </div>
 

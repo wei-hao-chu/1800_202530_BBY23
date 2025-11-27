@@ -20,7 +20,7 @@ import "./components/footer.js";
 import "./components/navbar.js";
 
 // Custom global styles:
-import "../styles/style.css";
+import "./styles/style.css";
 
 // Custom global JS code (shared with all pages)
 onAuthReady(async (user) => {

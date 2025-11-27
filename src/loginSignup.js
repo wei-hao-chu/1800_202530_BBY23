@@ -1,5 +1,5 @@
 import "./app.js";
-import "../styles/auth.css";
+import "./styles/auth.css";
 import { loginUser, signupUser, authErrorMessage } from "./authentication.js";
 
 // --- Login and Signup Page ---

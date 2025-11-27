@@ -1,7 +1,7 @@
 // Career Quiz JavaScript
 
 import "./app.js";
-import "../styles/quiz.css";
+import "./styles/quiz.css";
 
 // All 50 quiz questions organized by page
 const quizData = [
