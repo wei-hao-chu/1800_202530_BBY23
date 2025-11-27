@@ -1,14 +1,5 @@
-// -------------------------------------------------------------
-// src/loginSignup.js
-// -------------------------------------------------------------
-// Part of the COMP1800 Projects 1 Course (BCIT).
-// Starter code provided for students to use and adapt.
-// Manages the login/signup form behaviour and redirects.
-// -------------------------------------------------------------
-console.log("loginSignup.js loaded");
-
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap";
+import "./app.js";
+import "./styles/auth.css";
 import { loginUser, signupUser, authErrorMessage } from "./authentication.js";
 
 // --- Login and Signup Page ---
@@ -24,7 +15,8 @@ function initAuthUI() {
   const toLoginBtn = document.getElementById("toLogin");
   const loginForm = document.getElementById("loginForm");
   const signupForm = document.getElementById("signupForm");
-  const redirectUrl = "app_goals.html";
+  // What page to take the user to after logging in.
+  const redirectUrl = "main.html";
 
   // --- Helper Functions ---
   // Toggle element visibility
@@ -46,7 +38,7 @@ function initAuthUI() {
     alertEl.classList.add("d-none");
     alertEl.textContent = "";
     clearTimeout(errorTimeout);
-  }
+  }  
 
   // Enable/disable submit button for forms
   function setSubmitDisabled(form, disabled) {
@@ -108,7 +100,15 @@ function initAuthUI() {
     setSubmitDisabled(signupForm, true);
     try {
       await signupUser(name, email, password);
-      location.href = redirectUrl;
+      // After successful signup, show the login view so the user can sign in
+      showError("Account created — please sign in.");
+      setVisible(signupView, false);
+      setVisible(loginView, true);
+      const loginEmailEl = document.getElementById("loginEmail");
+      if (loginEmailEl) {
+        loginEmailEl.value = email;
+        loginEmailEl.focus();
+      }
     } catch (err) {
       showError(authErrorMessage(err));
       console.error(err);

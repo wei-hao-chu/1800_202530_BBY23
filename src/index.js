@@ -1,6 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap";
-
 import { onAuthReady } from "./authentication.js";
 import { db } from "./firebaseConfig.js";
 import {
@@ -12,17 +9,16 @@ import {
   addDoc,
   serverTimestamp,
 } from "firebase/firestore";
+import "./app.js";
 
+// This might be better as a .js for main.html instead,
+// but only if we ever have the time to even work on the main.html, for now, keep it like this.
 function showDashboard() {
-  const nameElement = document.getElementById("name-goes-here"); // the <h1> element to display "Hello, {name}"
+  // the <h1> element to display "Hello, {name}"
+  const nameElement = document.getElementById("name-goes-here");
 
   onAuthReady(async (user) => {
-    if (!user) {
-      // If no user is signed in → redirect back to login page.
-      location.mhref = "index.html";
-      return;
-    }
-
+    // Does not check if user is singed in, that is handled in app.js.
     const userDoc = await getDoc(doc(db, "users", user.uid));
     const name = userDoc.exists()
       ? userDoc.data().name
@@ -34,6 +30,5 @@ function showDashboard() {
     }
   });
 }
-
 
 showDashboard();

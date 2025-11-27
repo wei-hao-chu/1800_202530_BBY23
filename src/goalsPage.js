@@ -1,5 +1,5 @@
-import { db } from "/src/firebaseConfig.js";
-import { onAuthReady } from "/src/authentication.js";
+import { db } from "./firebaseConfig.js";
+import { onAuthReady } from "./authentication.js";
 import {
   collection,
   addDoc,

@@ -2,6 +2,33 @@
 *.logs
 node_modules/
 .vscode/
-.env
 # Ignore local environment files
 # See .env at project root for VITE_ variables
+.env
+
+# Other files to ignore (even if we dont have some, just to be safe)
+# Build outputs
+/dist/ 
+.firebase/
+
+# Vite / build caches
+.vite/
+.cache/
+
+# Local env overrides
+.env.local
+.env.*.local
+
+# OS / editor / logs
+Thumbs.db
+*.log
+npm-debug.log*
+.idea/
+.history/
+
+# Test / coverage
+coverage/
+test-output/
+
+# Optional generated files
+*.map

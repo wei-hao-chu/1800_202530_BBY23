@@ -1,3 +1,5 @@
+import { onAuthReady, logoutUser } from "../authentication.js";
+
 class SiteNavbar extends HTMLElement {
   connectedCallback() {
     this.renderNavbar();
@@ -36,7 +38,7 @@ class SiteNavbar extends HTMLElement {
         }
         .hamburger:hover { opacity: 0.8; }
         .bar { width: clamp(20px, 4vw, 26px); height: 3px; background-color: #f1faee; border-radius: 2px; transition: background-color 0.3s ease; }
-        .hamburger:hover .bar { background-color: #878ed8ff; }
+        .hamburger:hover .bar { background-color: black; }
 
         .side-menu {
           position: fixed; top: 0; left: 0; width: 260px; max-width: 80vw; height: 100%;
@@ -79,6 +81,12 @@ class SiteNavbar extends HTMLElement {
           flex: 0 0 auto;
         }
         .site-brand:hover { color: #878ed8ff; }
+
+        /* Responsive sizing for the auth button inside the navbar */
+        #authBtn {
+          padding: clamp(6px, 0.9vw, 10px) clamp(10px, 1.8vw, 16px);
+          font-size: clamp(13px, 1.9vw, 15px);
+        }
 
         .search-container { position: relative; display: flex; align-items: center; transition: all 0.3s ease; flex: 0 1 auto; }
 
@@ -141,25 +149,25 @@ class SiteNavbar extends HTMLElement {
 
         <div class="side-menu" id="sideMenu" aria-hidden="true">
           <a href="index.html"><div class="menu-logo">Pathfinder</div></a>
-            <a href="app_home.html">App</a>
-            <a href="#how">FAQ</a>
+            <a href="main.html">App</a>
             <a href="quiz.html">Surveys</a>
-            <a href="#about">News</a>
             <a href="goals.html">Goals</a>
+            <a href="index.html#slim">About Us</a>
+            <a href="index.html#bcit">BCIT</a>
         </div>
 
         <div class="overlay" id="overlay"></div>
 
         <div class="right-section">
         <button
+          id="authBtn"
           class="btn"
-          onclick="window.location.href='login.html'"
           type="button"
         >
           Login/Signup
         </button>
           <div class="search-container">
-            <input type="search" id="navSearch" placeholder="Search" aria-label="Search">
+            <input type="search" id="navSearch" placeholder="Search News" aria-label="Search News">
             <button type="button" class="search-btn" aria-label="Search">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.867-3.833zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -188,7 +196,52 @@ class SiteNavbar extends HTMLElement {
     overlay.addEventListener("click", closeMenu);
   }
 
-  renderAuthControls() {}
+  renderAuthControls() {
+    const authBtn = this.querySelector("#authBtn");
+
+    function updateGlobalAuthButtons(isLoggedIn) {
+      // Update any plain page buttons that say exactly "Login/Signup"
+      document.querySelectorAll("button").forEach((btn) => {
+        const txt = (btn.textContent || "").trim();
+        if (txt === "Login/Signup" || txt === "Logout") {
+          btn.textContent = isLoggedIn ? "Logout" : "Login/Signup";
+        }
+      });
+      // Attach click handler once to those buttons to provide immediate logout
+      document.querySelectorAll("button").forEach((btn) => {
+        const txt = (btn.textContent || "").trim();
+        if (txt === "Login/Signup" || txt === "Logout") {
+          // remove inline navigation attribute to avoid double action
+          try {
+            btn.removeAttribute("onclick");
+          } catch (e) {}
+          if (!btn.dataset.authHandler) {
+            btn.addEventListener("click", (e) => {
+              // Decide action based on current button text at click time
+              e.preventDefault();
+              const now = (btn.textContent || "").trim();
+              if (now === "Logout") {
+                // Immediately sign out and rely on logoutUser's redirect
+                logoutUser().catch((err) =>
+                  console.error("Logout failed", err)
+                );
+              } else {
+                // Navigate to login page for signin/signup
+                window.location.href = "login.html";
+              }
+            });
+            btn.dataset.authHandler = "1";
+          }
+        }
+      });
+    }
+
+    onAuthReady((user) => {
+      const isLoggedIn = !!user;
+      if (authBtn) authBtn.textContent = isLoggedIn ? "Logout" : "Login/Signup";
+      updateGlobalAuthButtons(isLoggedIn);
+    });
+  }
 }
 
 customElements.define("site-navbar", SiteNavbar);

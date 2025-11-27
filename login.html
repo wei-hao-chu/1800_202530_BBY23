@@ -1,84 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Pathfinder • Authentication</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="utf-8" />
+    <title>Pathfinder Authentication</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+    />
+    <meta name="generator" content="Phoenix Code, VS Code" />
+    <meta name="keywords" content="XHTML,CSS,BCIT" />
+    <link rel="icon" href="/images/logo.png" type="image/png" />
 
-  <link rel="stylesheet" href="src/styles/auth.css" />
-  <link rel="stylesheet" href="src/styles/style.css" />
+    <!-- Made it so it only loads one script and then the 
+         script loads the rest so we can host it easily. -->
+    <script type="module" src="/src/loginSignup.js"></script>
+  </head>
 
-  <!-- Navbar + footer -->
-  <script type="module" src="/src/components/template/site-navbar.js"></script>
+  <body>
+    <!-- No navbar so it looks cleaner -->
 
-</head>
+    <!-- Log In View -->
+    <main class="auth-hero">
+      <div id="authAlert" class="d-none"></div>
 
-<body>
+      <section id="loginView" class="auth-card" aria-labelledby="loginTitle">
+        <div class="auth-brand">
+          <a href="index.html"><span class="brand-text">Pathfinder</span></a>
+        </div>
 
-<header id="home">
-  <div class="left">
-    <div class="row">
-      <ul>
-        <img id="logo" src="images/study.png" width="10%" alt="Study" />
-        <li><a href="app_home.html">App</a></li>
-        <li><a href="#how">FAQ</a></li>
-        <li><a href="#info">Surveys</a></li>
-        <li><a href="#about">News</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="right">
-    <div class="row">
-      <h4>Pathfinder</h4>
-      <img src="images/open book.jpg" width="20%" alt="book logo" />
-    </div>
-  </div>
-</header>
+        <div class="text-center">
+          <h2 id="loginTitle" style="color: black">Log in to your account</h2>
+          <p class="helper">
+            Welcome back! Enter your credentials to continue.
+          </p>
+        </div>
 
-<main class="auth-hero">
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input
+              id="loginEmail"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+            <p class="error" id="loginEmailError" aria-live="polite"></p>
+          </div>
 
-  <div id="authAlert" class="d-none"></div>
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <input
+              id="loginPassword"
+              name="password"
+              type="password"
+              placeholder="••••••••"
+              autocomplete="current-password"
+              required
+            />
+            <p class="error" id="loginPasswordError" aria-live="polite"></p>
+          </div>
+          <div class="meta" style="margin-top: 12px; text-align: center">
+            <button
+              class="btn-link"
+              id="toSignup"
+              class="link-like"
+              type="button"
+              style="color: cornflowerblue"
+            >
+              Don’t have an account? Sign up
+            </button>
+            <div style="margin-top: 12px; text-align: center">
+              <button type="submit" class="btn btn-primary">Log in</button>
+            </div>
+          </div>
+        </form>
+      </section>
 
-  <section id="loginView" class="auth-card" aria-labelledby="loginTitle">
-    <div class="auth-brand">
-      <span class="brand-text">Pathfinder</span>
-    </div>
+      <!-- Sign Up View -->
+      <section id="signupView" class="d-none">
+        <div class="auth-card">
+          <div class="auth-brand">
+            <a href="index.html"><span class="brand-text">Pathfinder</span></a>
+          </div>
+          <div class="text-center">
+            <h2 id="signupTitle" style="color: black">Create an account</h2>
+            <p class="helper">
+              Create your account to save goals and progress.
+            </p>
+          </div>
+          <form id="signupForm" novalidate>
+            <div class="field">
+              <label for="signupName">Full name</label>
+              <input id="signupName" name="name" type="text" required />
+            </div>
+            <div class="field">
+              <label for="signupEmail">Email</label>
+              <input id="signupEmail" name="email" type="email" required />
+            </div>
+            <div class="field">
+              <label for="signupPassword">Password</label>
+              <input
+                id="signupPassword"
+                name="password"
+                type="password"
+                required
+              />
+            </div>
+            <div class="meta" style="margin-top: 12px; text-align: center">
+              <button
+                class="btn-link"
+                id="toLogin"
+                class="link-like"
+                type="button"
+                style="color: cornflowerblue"
+              >
+                Already have an account? Log in
+              </button>
+              <div style="margin-top: 12px; text-align: center">
+                <button type="submit" class="btn btn-primary">Sign up</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
 
-    <h1 id="loginTitle">Log in to your account</h1>
-    <p class="helper">Welcome back! Enter your credentials to continue.</p>
-
-    <form id="loginForm" novalidate>
-
-      <div class="field">
-        <label for="loginEmail">Email</label>
-        <input id="loginEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
-        <p class="error" id="loginEmailError" aria-live="polite"></p>
-      </div>
-
-      <div class="field">
-        <label for="loginPassword">Password</label>
-        <input id="loginPassword" name="password" type="password" placeholder="••••••••" autocomplete="current-password" required />
-        <p class="error" id="loginPasswordError" aria-live="polite"></p>
-      </div>
-
-    </form>
-
-    <div class="meta" style="margin-top: 12px; text-align:center;">
-      <span>Don’t have an account?</span>
-      <a id="toSignup" href="signup.html">Login</a>
-    </div>
-
-  </section>
-
-  <section id="signupView" class="d-none"></section>
-
-</main>
-
-<footer>Page Created By Matthew, Vincent, Melina, and Hazen.</footer>
-
-<script type="module" src="/src/firebaseConfig.js"></script>
-<script type="module" src="/src/authentication.js"></script>
-<script type="module" src="/src/loginSignup.js"></script>
-
-</body>
+    <!-- No footer so it looks cleaner -->
+  </body>
 </html>
