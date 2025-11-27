@@ -1,4 +1,4 @@
-import { onAuthReady, logoutUser } from "../authentication.js";
+
 
 // -------------------------------------------------------------
 // Clean Pathfinder Navbar Component (FINAL)
@@ -6,7 +6,7 @@ import { onAuthReady, logoutUser } from "../authentication.js";
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "/src/firebaseConfig.js";
-import { logoutUser } from "/src/authentication.js";
+import {onAuthReady, logoutUser } from "/src/authentication.js";
 
 class SiteNavbar extends HTMLElement {
   connectedCallback() {
