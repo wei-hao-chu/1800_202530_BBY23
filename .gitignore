@@ -8,9 +8,7 @@ node_modules/
 
 # Other files to ignore (even if we dont have some, just to be safe)
 # Build outputs
-# /dist/ exluded until i get confirmation from the teacher to put it here.
-# on that note, after that dont forget to update read me again in ALL sections.
-# Maybe take some of the stuff from index.html and index.js for main.html and main.js?
+/dist/ 
 .firebase/
 
 # Vite / build caches

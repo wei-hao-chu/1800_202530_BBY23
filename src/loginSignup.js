@@ -1,8 +1,5 @@
-console.log("loginSignup.js loaded");
-
 import "./app.js";
 import "./styles/auth.css";
-import "./firebaseConfig.js";
 import { loginUser, signupUser, authErrorMessage } from "./authentication.js";
 
 // --- Login and Signup Page ---
@@ -41,7 +38,7 @@ function initAuthUI() {
     alertEl.classList.add("d-none");
     alertEl.textContent = "";
     clearTimeout(errorTimeout);
-  }
+  }  
 
   // Enable/disable submit button for forms
   function setSubmitDisabled(form, disabled) {

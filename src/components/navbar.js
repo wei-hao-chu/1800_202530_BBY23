@@ -1,3 +1,5 @@
+import { onAuthReady, logoutUser } from "../authentication.js";
+
 class SiteNavbar extends HTMLElement {
   connectedCallback() {
     this.renderNavbar();
@@ -152,8 +154,8 @@ class SiteNavbar extends HTMLElement {
 
         <div class="right-section">
         <button
+          id="authBtn"
           class="btn"
-          onclick="window.location.href='login.html'"
           type="button"
         >
           Login/Signup
@@ -188,7 +190,48 @@ class SiteNavbar extends HTMLElement {
     overlay.addEventListener("click", closeMenu);
   }
 
-  renderAuthControls() {}
+  renderAuthControls() {
+    const authBtn = this.querySelector("#authBtn");
+
+    function updateGlobalAuthButtons(isLoggedIn) {
+      // Update any plain page buttons that say exactly "Login/Signup"
+      document.querySelectorAll("button").forEach((btn) => {
+        const txt = (btn.textContent || "").trim();
+        if (txt === "Login/Signup" || txt === "Logout") {
+          btn.textContent = isLoggedIn ? "Logout" : "Login/Signup";
+        }
+      });
+      // Attach click handler once to those buttons to provide immediate logout
+      document.querySelectorAll("button").forEach((btn) => {
+        const txt = (btn.textContent || "").trim();
+        if (txt === "Login/Signup" || txt === "Logout") {
+          // remove inline navigation attribute to avoid double action
+          try { btn.removeAttribute('onclick'); } catch (e) {}
+          if (!btn.dataset.authHandler) {
+            btn.addEventListener('click', (e) => {
+              // Decide action based on current button text at click time
+              e.preventDefault();
+              const now = (btn.textContent || '').trim();
+              if (now === 'Logout') {
+                // Immediately sign out and rely on logoutUser's redirect
+                logoutUser().catch(err => console.error('Logout failed', err));
+              } else {
+                // Navigate to login page for signin/signup
+                window.location.href = 'login.html';
+              }
+            });
+            btn.dataset.authHandler = '1';
+          }
+        }
+      });
+    }
+
+    onAuthReady((user) => {
+      const isLoggedIn = !!user;
+      if (authBtn) authBtn.textContent = isLoggedIn ? "Logout" : "Login/Signup";
+      updateGlobalAuthButtons(isLoggedIn);
+    });
+  }
 }
 
 customElements.define("site-navbar", SiteNavbar);
