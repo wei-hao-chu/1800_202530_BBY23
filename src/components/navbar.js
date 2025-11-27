@@ -82,6 +82,12 @@ class SiteNavbar extends HTMLElement {
         }
         .site-brand:hover { color: #878ed8ff; }
 
+        /* Responsive sizing for the auth button inside the navbar */
+        #authBtn {
+          padding: clamp(6px, 0.9vw, 10px) clamp(10px, 1.8vw, 16px);
+          font-size: clamp(13px, 1.9vw, 15px);
+        }
+
         .search-container { position: relative; display: flex; align-items: center; transition: all 0.3s ease; flex: 0 1 auto; }
 
         input[type="search"] {
@@ -161,7 +167,7 @@ class SiteNavbar extends HTMLElement {
           Login/Signup
         </button>
           <div class="search-container">
-            <input type="search" id="navSearch" placeholder="Search" aria-label="Search">
+            <input type="search" id="navSearch" placeholder="Search News" aria-label="Search News">
             <button type="button" class="search-btn" aria-label="Search">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.867-3.833zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -206,21 +212,25 @@ class SiteNavbar extends HTMLElement {
         const txt = (btn.textContent || "").trim();
         if (txt === "Login/Signup" || txt === "Logout") {
           // remove inline navigation attribute to avoid double action
-          try { btn.removeAttribute('onclick'); } catch (e) {}
+          try {
+            btn.removeAttribute("onclick");
+          } catch (e) {}
           if (!btn.dataset.authHandler) {
-            btn.addEventListener('click', (e) => {
+            btn.addEventListener("click", (e) => {
               // Decide action based on current button text at click time
               e.preventDefault();
-              const now = (btn.textContent || '').trim();
-              if (now === 'Logout') {
+              const now = (btn.textContent || "").trim();
+              if (now === "Logout") {
                 // Immediately sign out and rely on logoutUser's redirect
-                logoutUser().catch(err => console.error('Logout failed', err));
+                logoutUser().catch((err) =>
+                  console.error("Logout failed", err)
+                );
               } else {
                 // Navigate to login page for signin/signup
-                window.location.href = 'login.html';
+                window.location.href = "login.html";
               }
             });
-            btn.dataset.authHandler = '1';
+            btn.dataset.authHandler = "1";
           }
         }
       });

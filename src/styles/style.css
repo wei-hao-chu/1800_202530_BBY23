@@ -145,6 +145,20 @@ aside {
   flex-direction: column;
 }
 
+/* Responsive images on the index page (exclude the BCIT figure) */
+.mobile-img img {
+  display: inline-block;
+  width: clamp(80px, 18vw, 160px);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make the Login/Signup button on index more prominent and responsive */
+#indexAuthBtn {
+  padding: clamp(8px, 1.2vw, 12px) clamp(12px, 2.2vw, 18px);
+  font-size: clamp(14px, 2.2vw, 16px);
+}
+
 #inbetween {
   text-align: center;
   padding: clamp(1rem, 3vw, 3rem) 0;
@@ -162,11 +176,12 @@ aside {
     var(--secondary-color) 100%
   );
 }
+
 #middle img {
-  width: clamp(40px, 8vw, 200px);
   padding: 0.5rem;
   transition: transform 0.25s ease;
 }
+
 #middle img:hover {
   transform: scale(1.05);
 }
@@ -186,11 +201,13 @@ aside {
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -4px 20px var(--shadow);
 }
+
 .row {
   margin: 1.5rem 0;
   background: var(--light-bg);
   border-radius: 10px;
 }
+
 #bottom img {
   padding: 1rem;
   transition: transform 0.25s ease;
