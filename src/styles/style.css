@@ -19,13 +19,6 @@
   --mint-cream: #eef4edff;
 }
 
-/* Consolidated responsive stylesheet
-   - Removed device-specific media query blocks
-   - Use fluid sizes (clamp) so the layout adapts for desktop/tablet/phone
-   - Use a column flex layout so footer sits at the bottom of the page
-*/
-
-/* Reset / universal */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -132,15 +125,12 @@ header ul li a:hover {
   font-size: clamp(1.6rem, 4vw, 2.4rem);
 }
 
-/* Utility row */
-.row {
-  display: flex;
-  gap: clamp(0.5rem, 2vw, 1rem);
-  align-items: center;
+#inbetween img {
+  transition: transform 1s ease;
 }
-.row img {
-  width: clamp(30px, 5vw, 48px);
-  height: auto;
+
+#inbetween img:hover {
+  transform: rotate(360deg) scale(1.05);
 }
 
 /* Layout pieces (fluid and simple) */
@@ -153,6 +143,20 @@ aside {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
+}
+
+/* Responsive images on the index page (exclude the BCIT figure) */
+.mobile-img img {
+  display: inline-block;
+  width: clamp(80px, 18vw, 160px);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make the Login/Signup button on index more prominent and responsive */
+#indexAuthBtn {
+  padding: clamp(8px, 1.2vw, 12px) clamp(12px, 2.2vw, 18px);
+  font-size: clamp(14px, 2.2vw, 16px);
 }
 
 #inbetween {
@@ -172,11 +176,12 @@ aside {
     var(--secondary-color) 100%
   );
 }
+
 #middle img {
-  width: clamp(40px, 8vw, 200px);
   padding: 0.5rem;
   transition: transform 0.25s ease;
 }
+
 #middle img:hover {
   transform: scale(1.05);
 }
@@ -193,18 +198,16 @@ aside {
 #bottom {
   padding: clamp(1rem, 3vw, 3rem);
   background-color: var(--white);
-  text-align: center;
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -4px 20px var(--shadow);
 }
-#bottom .row {
+
+.row {
   margin: 1.5rem 0;
-  padding: 1rem;
   background: var(--light-bg);
   border-radius: 10px;
-  line-height: 1.7;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
 }
+
 #bottom img {
   padding: 1rem;
   transition: transform 0.25s ease;
@@ -217,9 +220,11 @@ aside {
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: space-between; /* push left to left, right to right */
   padding: 1rem;
   background: var(--light-bg);
   border-radius: 10px;
+  width: 100%;
 }
 #slim .left {
   font-size: clamp(1rem, 2.2vw, 1.5rem);
@@ -236,14 +241,16 @@ aside {
   transform: translateX(4px);
 }
 
-#about {
+#bcit {
   margin: clamp(2rem, 5vw, 5rem) auto clamp(1rem, 3vw, 3rem);
   max-width: 900px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 20px var(--shadow);
+  padding: 1.5em;
+  text-align: center;
 }
-#about img {
+#bcit img {
   width: 100%;
   height: auto;
   display: block;
@@ -254,7 +261,14 @@ figcaption {
   padding: 1rem;
   font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 600;
-  text-align: center;
+  border-radius: 8px;
+}
+figcaption:hover {
+  transform: translateY(-2px);
+  background: #0056b3;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
 }
 
 /* Footer / site-footer */
@@ -290,6 +304,7 @@ textarea {
   border-radius: 6px;
   font-size: 1rem;
 }
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -308,9 +323,11 @@ textarea {
   transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease,
     backdrop-filter 0.12s ease;
 }
+
 .btn:hover {
   transform: translateY(-2px);
   background: rgba(8, 12, 20, 0.62);
+  color: #fff;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
@@ -329,6 +346,54 @@ textarea {
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  padding: 10px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-link:hover {
+  color: #a71d2a;
 }
 
 /* Compact bordered container used for small inline/grouped content */

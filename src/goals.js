@@ -1,12 +1,21 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  updateDoc,
+  addDoc,
+  collection,
+  serverTimestamp,
+} from "firebase/firestore";
 import { auth, db } from "./firebaseConfig.js";
+import "./app.js";
+import "./goalsPage.js";
 
 //-----------------------------------------------------------
 // Display Job / Goal Title
 // (e.g., "Software Developer at Google" or "Learn ReactJS")
 //-----------------------------------------------------------
-const goalDocID = localStorage.getItem('goalDocID');
+const goalDocID = localStorage.getItem("goalDocID");
 
 async function displayGoalName(id) {
   if (!id) return console.warn("No goal ID found");
@@ -50,7 +59,7 @@ async function saveGoalProgress() {
       progress,
       notes,
       status,
-      timestamp: serverTimestamp()
+      timestamp: serverTimestamp(),
     });
 
     console.log("✅ Career progress saved!");

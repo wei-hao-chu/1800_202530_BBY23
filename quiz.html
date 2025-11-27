@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Pathfinder Career Quiz</title>
+    <meta name="pathfinder-application" content="pathfinder" />
     <meta charset="utf-8" />
+    <meta name="author" content="Matthew, Hazen, Vincent, Melina." />
+    <!--This makes it so it's responsive to the device's screen size-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Career Quiz - PathFinder</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="Pathfinder - A career guidance platform helping you find the right career path."
     />
-    <link rel="stylesheet" href="src/styles/style.css" />
-    <link rel="stylesheet" href="src/styles/quiz.css" />
-    <!-- Web Components for shared navbar and footer layout -->
-    <script
-      type="module"
-      src="/src/components/navbar.js"
-    ></script>
-    <script
-      type="module"
-      src="/src/components/footer.js"
-    ></script>
+    <meta name="generator" content="Phoenix Code, VS Code" />
+    <meta name="keywords" content="XHTML,CSS,BCIT" />
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+
+    <script type="module" src="/src/quiz.js"></script>
   </head>
   <body>
     <!-- our own navbar goes here -->
@@ -58,13 +55,11 @@
 
         <!-- Navigation Buttons -->
         <div class="quiz-navigation">
-          <button id="prevBtn" class="btn btn-secondary" style="display: none">
+          <button class="btn btn-secondary" style="display: none">
             Previous
           </button>
-          <button id="nextBtn" class="btn btn-primary">Next</button>
-          <button id="submitBtn" class="btn btn-success" style="display: none">
-            Submit
-          </button>
+          <button class="btn btn-primary">Next</button>
+          <button class="btn btn-success" style="display: none">Submit</button>
         </div>
 
         <!-- Page Indicator -->
@@ -81,8 +76,5 @@
 
     <!-- our own footer goes here -->
     <site-footer></site-footer>
-
-    <!-- Quiz JavaScript -->
-    <script type="module" src="/src/quiz.js"></script>
   </body>
 </html>

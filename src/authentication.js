@@ -1,7 +1,6 @@
 console.log("authentication.js loaded");
 
-import { auth } from "/src/firebaseConfig.js";
-import { db } from "/src/firebaseConfig.js";
+import { auth, db } from "./firebaseConfig.js";
 import { doc, setDoc } from "firebase/firestore";
 
 import {
@@ -17,7 +16,11 @@ export async function loginUser(email, password) {
 }
 
 export async function signupUser(name, email, password) {
-  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  const userCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
   const user = userCredential.user;
 
   await updateProfile(user, { displayName: name });
@@ -27,8 +30,8 @@ export async function signupUser(name, email, password) {
       name: name,
       email: email,
       country: "Canada", // Default value
-      school: "BCIT",     // Default value
-      career: career
+      school: "BCIT", // Default value
+      career: "",
     });
     console.log("Firestore user document created successfully!");
   } catch (err) {
@@ -48,8 +51,9 @@ export function checkAuthState() {
     if (window.location.pathname.endsWith("app_goals.html")) {
       if (user) {
         const displayName = user.displayName || user.email;
-        document.getElementById("welcomeMessage").textContent =
-          `Hello, ${displayName}!`;
+        document.getElementById(
+          "welcomeMessage"
+        ).textContent = `Hello, ${displayName}!`;
       } else {
         window.location.href = "index.html";
       }

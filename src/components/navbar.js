@@ -1,3 +1,5 @@
+import { onAuthReady, logoutUser } from "../authentication.js";
+
 // -------------------------------------------------------------
 // Clean Pathfinder Navbar Component (FINAL)
 // -------------------------------------------------------------
@@ -94,15 +96,27 @@ class SiteNavbar extends HTMLElement {
         }
 
         .site-brand {
-          font-family: "Pacifico", cursive;
-          font-size: 28px;
-          color: #fff;
-          text-decoration: none;
+          font-family: 'Pacifico', cursive;
+          font-size: clamp(22px, 4.5vw, 32px);
+          color: #f1faee;
+          transition: color 0.3s ease, opacity 0.3s ease;
+          white-space: nowrap;
+          line-height: 1;          /* no vertical wobble */
+          position: static;         /* ensure normal flow */
+          transform: none;          /* cancel any global transforms */
+          margin: 0;
+          flex: 0 0 auto;
+        }
+        .site-brand:hover { color: #878ed8ff; }
+
+        /* Responsive sizing for the auth button inside the navbar */
+        #authBtn {
+          padding: clamp(6px, 0.9vw, 10px) clamp(10px, 1.8vw, 16px);
+          font-size: clamp(13px, 1.9vw, 15px);
         }
 
-        .search-container {
-          position: relative;
-        }
+        .search-container { position: relative; display: flex; align-items: center; transition: all 0.3s ease; flex: 0 1 auto; }
+
         input[type="search"] {
           height: 36px;
           border-radius: 6px;
@@ -137,21 +151,31 @@ class SiteNavbar extends HTMLElement {
           <div class="bar"></div>
         </div>
 
-        <div class="side-menu" id="sideMenu">
-          <div class="menu-logo site-brand">Pathfinder</div>
-          <a href="app_home.html">App</a>
-          <a href="quiz.html">Surveys</a>
-          <a href="goals.html">Goals</a>
-          <a href="index.html">Home</a>
+        <div class="side-menu" id="sideMenu" aria-hidden="true">
+          <a href="index.html"><div class="menu-logo">Pathfinder</div></a>
+            <a href="main.html">App</a>
+            <a href="quiz.html">Surveys</a>
+            <a href="goals.html">Goals</a>
+            <a href="index.html#slim">About Us</a>
+            <a href="index.html#bcit">BCIT</a>
         </div>
 
         <div class="overlay" id="overlay"></div>
 
         <div class="right-section">
+        <button
+          id="authBtn"
+          class="btn"
+          type="button"
+        >
+          Login/Signup
+        </button>
           <div class="search-container">
-            <input type="search" placeholder="Search">
-            <button class="search-btn">
-              🔍
+            <input type="search" id="navSearch" placeholder="Search News" aria-label="Search News">
+            <button type="button" class="search-btn" aria-label="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.867-3.833zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+              </svg>
             </button>
           </div>
 
@@ -179,22 +203,49 @@ class SiteNavbar extends HTMLElement {
   }
 
   renderAuthControls() {
-    const authControls = this.querySelector("#authControls");
+    const authBtn = this.querySelector("#authBtn");
 
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        authControls.innerHTML = `
-          <button class="nav-btn" id="logoutBtn">Log out</button>
-        `;
-        this.querySelector("#logoutBtn")?.addEventListener("click", logoutUser);
-      } else {
-        authControls.innerHTML = `
-          <button class="nav-btn" id="loginBtn">Log in</button>
-        `;
-        this.querySelector("#loginBtn")?.addEventListener("click", () => {
-          window.location.href = "login.html";
-        });
-      }
+    function updateGlobalAuthButtons(isLoggedIn) {
+      // Update any plain page buttons that say exactly "Login/Signup"
+      document.querySelectorAll("button").forEach((btn) => {
+        const txt = (btn.textContent || "").trim();
+        if (txt === "Login/Signup" || txt === "Logout") {
+          btn.textContent = isLoggedIn ? "Logout" : "Login/Signup";
+        }
+      });
+      // Attach click handler once to those buttons to provide immediate logout
+      document.querySelectorAll("button").forEach((btn) => {
+        const txt = (btn.textContent || "").trim();
+        if (txt === "Login/Signup" || txt === "Logout") {
+          // remove inline navigation attribute to avoid double action
+          try {
+            btn.removeAttribute("onclick");
+          } catch (e) {}
+          if (!btn.dataset.authHandler) {
+            btn.addEventListener("click", (e) => {
+              // Decide action based on current button text at click time
+              e.preventDefault();
+              const now = (btn.textContent || "").trim();
+              if (now === "Logout") {
+                // Immediately sign out and rely on logoutUser's redirect
+                logoutUser().catch((err) =>
+                  console.error("Logout failed", err)
+                );
+              } else {
+                // Navigate to login page for signin/signup
+                window.location.href = "login.html";
+              }
+            });
+            btn.dataset.authHandler = "1";
+          }
+        }
+      });
+    }
+
+    onAuthReady((user) => {
+      const isLoggedIn = !!user;
+      if (authBtn) authBtn.textContent = isLoggedIn ? "Logout" : "Login/Signup";
+      updateGlobalAuthButtons(isLoggedIn);
     });
   }
 }
