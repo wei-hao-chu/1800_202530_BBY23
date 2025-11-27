@@ -21,7 +21,7 @@ PathFinder is a client-side web application (HTML/CSS/JavaScript) created for th
 - **Styling**: plain CSS (styles under `src/styles/`)
 - **Build Tool**: [Vite](https://vitejs.dev/)
 - **Backend**: Firebase for hosting and authentication, Firestore
-- **Database**: `bootstrap`, `firebase`
+- **Dependencies**: bootstrap (CSS framework), firebase (Auth + Firestore)
 
 ---
 
@@ -39,7 +39,7 @@ npm install
 npm run dev
 ```
 
-3. Open the app in your browser at `http://localhost:3000`
+3. Open the app in your browser at `http://localhost:3000` or `http://localhost:5173`
 
 Notes:
 
@@ -53,7 +53,6 @@ This can vary, and may change in the future, this is merely in its current state
 
 ```
 1800_202530_BBY23/
-├── dist/                  #  Contains some folders and files for hosting
 ├── public
 │   └── images/            #  Contains many images
 ├── src/
@@ -195,4 +194,4 @@ This is an <br> example
 
 ## License
 
-This project is distributed under the MIT License.
+This project is distributed under the CC BY-NC-SA License. See the LICENSE file for details.
