@@ -4,7 +4,6 @@ import 'bootstrap';
 //--------------------------------------------------------------
 // If you have custom global styles, import them as well:
 //--------------------------------------------------------------
-import '/src/styles/app_home.css';
 
 //--------------------------------------------------------------
 // Custom global JS code (shared with all pages)can go here.
